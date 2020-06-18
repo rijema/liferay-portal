@@ -227,6 +227,7 @@ const Trigger = forwardRef(
 			onTriggerClicked,
 			onTriggerKeyDown,
 			readOnly,
+			required,
 			value,
 			...otherProps
 		},
@@ -243,6 +244,7 @@ const Trigger = forwardRef(
 					onKeyDown={onTriggerKeyDown}
 					readOnly={readOnly}
 					ref={ref}
+					required={required}
 					value={value}
 					{...otherProps}
 				/>
@@ -259,6 +261,7 @@ const Select = ({
 	options,
 	predefinedValue,
 	readOnly,
+	required,
 	value,
 	...otherProps
 }) => {
@@ -371,6 +374,7 @@ const Select = ({
 				predefinedValue={predefinedValue}
 				readOnly={readOnly}
 				ref={triggerElementRef}
+				required={required}
 				value={currentValue}
 				{...otherProps}
 			/>
@@ -426,6 +430,7 @@ const Main = ({
 	options = [],
 	predefinedValue = [],
 	readOnly = false,
+	required,
 	value = [],
 	...otherProps
 }) => {
@@ -455,26 +460,27 @@ const Main = ({
 	);
 
 	return (
-		<FieldBaseProxy
-			label={label}
-			localizedValue={localizedValue}
-			name={name}
-			readOnly={readOnly}
-			{...otherProps}
-		>
-			<Select
-				multiple={multiple}
+			<FieldBaseProxy
+				label={label}
+				localizedValue={localizedValue}
 				name={name}
-				onCloseButtonClicked={onChange}
-				onDropdownItemClicked={onChange}
-				onExpand={onExpand}
-				options={normalizedOptions}
-				predefinedValue={predefinedValueArray}
 				readOnly={readOnly}
-				value={value}
 				{...otherProps}
-			/>
-		</FieldBaseProxy>
+			>
+				<Select
+					multiple={multiple}
+					name={name}
+					onCloseButtonClicked={onChange}
+					onDropdownItemClicked={onChange}
+					onExpand={onExpand}
+					options={normalizedOptions}
+					predefinedValue={predefinedValueArray}
+					readOnly={readOnly}
+					required={required}
+					value={value}
+					{...otherProps}
+				/>
+			</FieldBaseProxy>
 	);
 };
 

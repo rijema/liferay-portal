@@ -69,7 +69,7 @@ const CKEDITOR_CONFIG = {
 	],
 };
 
-const RichText = ({data, id, name, onChange, readOnly}) => {
+const RichText = ({data, id, name, onChange, readOnly,required}) => {
 	const [currentValue, setCurrentValue] = useSyncValue(data);
 
 	const editorProps = {
@@ -93,14 +93,14 @@ const RichText = ({data, id, name, onChange, readOnly}) => {
 
 	return (
 		<>
-			<Editor {...editorProps} />
+				<Editor {...editorProps} />
 
-			<input
-				defaultValue={currentValue}
-				id={id || name}
-				name={name}
-				type="hidden"
-			/>
+				<input
+					defaultValue={currentValue}
+					id={id || name}
+					name={name}
+					type="hidden"
+				/>
 		</>
 	);
 };
@@ -111,10 +111,12 @@ const Main = ({
 	onChange,
 	predefinedValue,
 	readOnly,
+	required,
 	value,
 	...otherProps
 }) => {
 	return (
+		<fieldset aria-required={required}>
 		<FieldBaseProxy {...otherProps} id={id} name={name} readOnly={readOnly}>
 			<RichText
 				data={value || predefinedValue}
@@ -124,6 +126,7 @@ const Main = ({
 				readOnly={readOnly}
 			/>
 		</FieldBaseProxy>
+		</fieldset>
 	);
 };
 

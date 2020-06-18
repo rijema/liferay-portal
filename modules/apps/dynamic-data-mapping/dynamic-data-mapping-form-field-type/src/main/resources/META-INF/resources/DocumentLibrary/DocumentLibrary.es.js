@@ -130,6 +130,7 @@ const DocumentLibrary = ({
 	onSelectButtonClicked,
 	placeholder,
 	readOnly,
+	required,
 	value,
 }) => {
 	const [transformedFileEntryTitle, transformedFileEntryURL] = useMemo(
@@ -154,6 +155,7 @@ const DocumentLibrary = ({
 					<ClayInput.GroupItem prepend>
 						<ClayInput
 							aria-label={Liferay.Language.get('file')}
+							aria-required={required}
 							className="field"
 							disabled
 							id={`${name}inputFile`}
@@ -209,6 +211,7 @@ const DocumentLibraryProxy = connectStore(
 		name,
 		placeholder,
 		readOnly,
+		required,
 		store,
 		value = '{}',
 		...otherProps
@@ -282,6 +285,7 @@ const DocumentLibraryProxy = connectStore(
 					}
 					placeholder={placeholder}
 					readOnly={readOnly}
+					required={required}
 					value={currentValue || ''}
 				/>
 			</FieldBaseProxy>

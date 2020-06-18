@@ -120,6 +120,7 @@ const DatePicker = ({
 	disabled,
 	name,
 	onChange,
+	required,
 	spritemap,
 	value: initialValue,
 }) => {
@@ -174,6 +175,7 @@ const DatePicker = ({
 				value={getValueForHidden(value)}
 			/>
 			<ClayDatePicker
+				aria-required={required}
 				dateFormat={dateMask}
 				disabled={disabled}
 				initialMonth={getInitialMonth(value)}
@@ -205,6 +207,7 @@ const DatePickerProxy = connectStore(
 		predefinedValue,
 		readOnly,
 		spritemap,
+		required,
 		value,
 		...otherProps
 	}) => (
@@ -219,6 +222,7 @@ const DatePickerProxy = connectStore(
 				name={name}
 				onChange={(value) => emit('fieldEdited', {}, value)}
 				placeholder={placeholder}
+				required={required}
 				spritemap={spritemap}
 				value={value ? value : predefinedValue}
 			/>

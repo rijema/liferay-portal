@@ -41,6 +41,7 @@ const ClayColorPickerWithState = ({
 	onFocus,
 	onValueChange,
 	readOnly,
+	required,
 	spritemap,
 }) => {
 	const [customColors, setCustoms] = useState(DEFAULT_COLORS);
@@ -57,6 +58,7 @@ const ClayColorPickerWithState = ({
 
 	return (
 		<ClayColorPicker
+			aria-required={required}
 			colors={customColors}
 			disabled={readOnly}
 			label={Liferay.Language.get('color-field-type-label')}
@@ -88,6 +90,7 @@ const ColorPickerProxy = connectStore(
 		name,
 		predefinedValue = '000000',
 		readOnly,
+		required,
 		spritemap,
 		value,
 		...otherProps
@@ -110,6 +113,7 @@ const ColorPickerProxy = connectStore(
 				}
 				onValueChange={(value) => emit('fieldEdited', {}, value)}
 				readOnly={readOnly}
+				required={required}
 				spritemap={spritemap}
 			/>
 		</FieldBaseProxy>

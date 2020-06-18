@@ -38,6 +38,7 @@ const ImagePicker = ({
 	onFieldChanged,
 	portletNamespace,
 	readOnly,
+	required
 }) => {
 	const [imageValues, setImageValues] = useState(inputValue);
 	const [modalVisible, setModalVisible] = useState(false);
@@ -145,6 +146,8 @@ const ImagePicker = ({
 					<ClayInput.GroupItem className="d-none d-sm-block" prepend>
 						<ClayInput
 							className="bg-light"
+							aria-label="image"
+							aria-required={required}
 							disabled={readOnly}
 							onClick={handleItemSelectorTriggerClick}
 							readOnly
@@ -243,6 +246,7 @@ const ImagePickerProxy = connectStore(
 		name,
 		portletNamespace,
 		readOnly,
+		required,
 		value,
 		...otherProps
 	}) => {
@@ -292,6 +296,7 @@ const ImagePickerProxy = connectStore(
 					}}
 					portletNamespace={portletNamespace}
 					readOnly={readOnly}
+					required={required}
 				/>
 			</FieldBaseProxy>
 		);

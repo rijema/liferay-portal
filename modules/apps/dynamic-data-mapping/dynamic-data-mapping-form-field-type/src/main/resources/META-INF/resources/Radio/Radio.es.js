@@ -29,6 +29,7 @@ const Radio = ({
 	onChange,
 	onFocus,
 	options,
+	required,
 	value,
 }) => {
 	const [currentValue, setCurrentValue] = useSyncValue(value);
@@ -48,6 +49,7 @@ const Radio = ({
 
 						onChange(event);
 					}}
+					aria-required={required}
 					value={option.value}
 				/>
 			))}
@@ -71,6 +73,7 @@ const RadioProxy = connectStore(
 		predefinedValue,
 		value,
 		readOnly,
+		required,
 		inline,
 		name,
 		...otherProps
@@ -96,6 +99,7 @@ const RadioProxy = connectStore(
 						emit('fieldEdited', event, event.target.value)
 					}
 					options={options}
+					required={required}
 					value={value ? value : predefinedValueMemo}
 				/>
 			</FieldBaseProxy>

@@ -32,6 +32,7 @@ const Text = ({
 	onChange,
 	onFocus,
 	placeholder,
+	required,
 	syncDelay,
 	value: initialValue,
 }) => {
@@ -40,6 +41,7 @@ const Text = ({
 	return (
 		<ClayInput
 			aria-label="text"
+			aria-required={required}
 			className="ddm-field-text"
 			disabled={disabled}
 			id={id}
@@ -249,6 +251,7 @@ const Main = ({
 	placeholder,
 	predefinedValue = '',
 	readOnly,
+	required,
 	syncDelay = true,
 	value,
 	...otherProps
@@ -272,6 +275,7 @@ const Main = ({
 				fieldName={fieldName}
 				id={id}
 				name={name}
+				required={required}
 				onBlur={onBlur}
 				onChange={onChange}
 				onFocus={onFocus}

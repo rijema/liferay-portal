@@ -67,6 +67,7 @@ const CheckboxMultiple = ({
 	onFocus,
 	options,
 	predefinedValue,
+	required,
 	value: initialValue,
 }) => {
 	const [value, setValue] = useState(initialValue);
@@ -101,6 +102,7 @@ const CheckboxMultiple = ({
 					onBlur={onBlur}
 					onChange={handleChange}
 					onFocus={onFocus}
+					aria-required={required}
 					value={option.value}
 				/>
 			))}
@@ -125,6 +127,7 @@ const CheckboxMultipleProxy = connectStore(
 		predefinedValue,
 		readOnly,
 		showAsSwitcher = true,
+		required,
 		value,
 		...otherProps
 	}) => (
@@ -146,6 +149,7 @@ const CheckboxMultipleProxy = connectStore(
 				onFocus={(event) => emit('fieldFocused', event)}
 				options={options}
 				predefinedValue={setJSONArrayValue(predefinedValue)}
+				required={required}
 				value={setJSONArrayValue(value)}
 			/>
 		</FieldBaseProxy>

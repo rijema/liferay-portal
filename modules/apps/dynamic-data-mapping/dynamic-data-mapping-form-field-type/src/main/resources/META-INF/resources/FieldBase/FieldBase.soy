@@ -75,9 +75,8 @@
 				class="ddm-label"
 			{/if}
 		{/let}
-		<fieldset>
+
 			{if $label and $showLabel or $required or $tooltip or $repeatable}
-				<legend>
 					<p {$attributes}>
 						{if $label and $showLabel}
 							{$label}{sp}
@@ -99,11 +98,13 @@
 							{/call}
 						{/if}
 					</p>
-				</legend>
 			{/if}
-
-			{$contentRenderer}
-		</fieldset>
+			
+			<fieldset {if $required}aria-required="true"{/if}>
+				<legend aria-labelledby="{$label}"></legend>	
+					{$contentRenderer}
+			</fieldset>
+			
 		{if $_localizedValue and length($_localizedValue) > 0}
 			{foreach $language in $_localizedValue}
 				{if $language.value != ''}

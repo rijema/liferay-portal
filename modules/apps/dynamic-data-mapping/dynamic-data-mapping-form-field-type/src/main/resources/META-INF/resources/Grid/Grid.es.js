@@ -20,7 +20,7 @@ import {FieldBaseProxy} from '../FieldBase/ReactFieldBase.es';
 import getConnectedReactComponentAdapter from '../util/ReactComponentAdapter.es';
 import {connectStore} from '../util/connectStore.es';
 
-const TableHead = ({columns}) => (
+const TableHead = ({columns,required}) => (
 	<ClayTable.Head>
 		<ClayTable.Row>
 			<ClayTable.Cell headingCell />
@@ -28,6 +28,7 @@ const TableHead = ({columns}) => (
 				if (column.value) {
 					return (
 						<ClayTable.Cell
+							aria-required={required}
 							headingCell
 							key={`column-${column.value}-${colIndex}`}
 						>
@@ -78,6 +79,7 @@ const Grid = ({
 	onChange = () => {},
 	onFocus = () => {},
 	rows = [{label: 'row', value: 'jehf'}],
+	required,
 	value,
 	...otherProps
 }) => (
@@ -100,7 +102,7 @@ const Grid = ({
 			})}
 
 		<ClayTable striped>
-			<TableHead columns={columns} />
+			<TableHead columns={columns} required={required}/>
 
 			<ClayTable.Body>
 				{rows.map((row, rowIndex) => {
@@ -134,7 +136,7 @@ const Grid = ({
 );
 
 const GridProxy = connectStore(
-	({columns, emit, name, readOnly, rows, value = {}, ...otherProps}) => {
+	({columns, emit, name, readOnly,required, rows, value = {}, ...otherProps}) => {
 		const [state, setState] = useState(value);
 
 		return (
@@ -161,6 +163,7 @@ const GridProxy = connectStore(
 					onFocus={(event) =>
 						emit('fieldFocused', event, event.target.value)
 					}
+					required={required}
 					rows={rows}
 					value={state}
 				/>
