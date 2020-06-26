@@ -269,7 +269,7 @@ const Main = ({
 		];
 
 	return (
-		<FieldBaseProxy {...otherProps} id={id} name={name} readOnly={readOnly}>
+		<FieldBaseProxy {...otherProps} id={id} name={name} readOnly={readOnly} required={required}>
 			<Component
 				disabled={readOnly}
 				fieldName={fieldName}

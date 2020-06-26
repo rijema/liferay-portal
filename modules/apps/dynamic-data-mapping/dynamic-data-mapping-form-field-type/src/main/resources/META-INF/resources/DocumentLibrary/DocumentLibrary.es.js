@@ -265,6 +265,7 @@ const DocumentLibraryProxy = connectStore(
 				id={id}
 				name={name}
 				readOnly={readOnly}
+				required={required}
 				store={store}
 			>
 				<DocumentLibrary

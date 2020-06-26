@@ -400,20 +400,24 @@ const Select = ({
 				onSetActive={setExpand}
 				ref={menuElementRef}
 			>
-				<ClayDropDown.ItemList>
-					{options.map((option, index) => (
-						<DropdownItem
-							currentValue={currentValue}
-							expand={expand}
-							index={index}
-							key={`${option.value}-${index}`}
-							multiple={multiple}
-							onSelect={handleSelect}
-							option={option}
-							options={options}
-						/>
-					))}
-				</ClayDropDown.ItemList>
+				<a>
+					<ClayDropDown.ItemList>
+						<fieldset aria-label="Field" aria-required={required}>
+						{options.map((option, index) => (
+							<DropdownItem
+								currentValue={currentValue}
+								expand={expand}
+								index={index}
+								key={`${option.value}-${index}`}
+								multiple={multiple}
+								onSelect={handleSelect}
+								option={option}
+								options={options}
+							/>
+						))}
+						</fieldset>
+					</ClayDropDown.ItemList>
+				</a>
 			</ClayDropDown.Menu>
 		</>
 	);
@@ -464,6 +468,7 @@ const Main = ({
 				label={label}
 				localizedValue={localizedValue}
 				name={name}
+				required={required}
 				readOnly={readOnly}
 				{...otherProps}
 			>

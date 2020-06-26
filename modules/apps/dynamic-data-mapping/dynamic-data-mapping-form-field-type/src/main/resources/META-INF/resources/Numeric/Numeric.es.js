@@ -127,7 +127,7 @@ const Main = ({
 	value,
 	...otherProps
 }) => (
-	<FieldBaseProxy {...otherProps} id={id} name={name} readOnly={readOnly}>
+	<FieldBaseProxy {...otherProps} id={id} name={name} readOnly={readOnly} required={required}>
 		<Numeric
 			dataType={dataType}
 			disabled={readOnly}

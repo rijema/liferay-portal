@@ -215,6 +215,7 @@ const DatePickerProxy = connectStore(
 			{...otherProps}
 			name={name}
 			readOnly={readOnly}
+			required={required}
 			spritemap={spritemap}
 		>
 			<DatePicker

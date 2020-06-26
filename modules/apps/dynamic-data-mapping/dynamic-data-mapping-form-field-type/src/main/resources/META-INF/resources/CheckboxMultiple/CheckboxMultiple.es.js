@@ -37,23 +37,23 @@ const Switcher = ({
 			'lfr-ddm-form-field-checkbox-switch-inline': inline,
 		})}
 	>
-		<label className="simple-toggle-switch toggle-switch">
-			<input
-				checked={checked}
-				className="toggle-switch-check"
-				disabled={disabled}
-				name={name}
-				onBlur={onBlur}
-				onChange={onChange}
-				onFocus={onFocus}
-				type="checkbox"
-				value={value}
-			/>
-			<span aria-hidden="true" className="toggle-switch-bar">
-				<span className="toggle-switch-handle"></span>
-			</span>
-			<span className="toggle-switch-label">{label}</span>
-		</label>
+			<label className="simple-toggle-switch toggle-switch">
+				<input
+					checked={checked}
+					className="toggle-switch-check"
+					disabled={disabled}
+					name={name}
+					onBlur={onBlur}
+					onChange={onChange}
+					onFocus={onFocus}
+					type="checkbox"
+					value={value}
+				/>
+				<span aria-hidden="true" className="toggle-switch-bar">
+					<span className="toggle-switch-handle"></span>
+				</span>
+				<span className="toggle-switch-label">{label}</span>
+			</label>
 	</div>
 );
 
@@ -91,6 +91,7 @@ const CheckboxMultiple = ({
 
 	return (
 		<div className="lfr-ddm-checkbox-multiple">
+			<fieldset aria-label="Field" aria-required={required}>
 			{options.map((option) => (
 				<Toggle
 					checked={displayValues.includes(option.value)}
@@ -102,10 +103,10 @@ const CheckboxMultiple = ({
 					onBlur={onBlur}
 					onChange={handleChange}
 					onFocus={onFocus}
-					aria-required={required}
 					value={option.value}
 				/>
 			))}
+			</fieldset>
 		</div>
 	);
 };
@@ -135,6 +136,7 @@ const CheckboxMultipleProxy = connectStore(
 			dispatch={dispatch}
 			name={name}
 			readOnly={readOnly}
+			required={required}
 			{...otherProps}
 		>
 			<CheckboxMultiple

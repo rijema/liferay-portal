@@ -194,13 +194,14 @@ function FieldBase({
  * This Proxy connects to the store to send the changes directly to the store. This
  * should be replaced when we have a communication with a Store/Provider in React.
  */
-const FieldBaseProxy = ({dispatch, name, store, ...otherProps}) => (
+const FieldBaseProxy = ({dispatch, name, store,required, ...otherProps}) => (
 	<FieldBase
 		{...otherProps}
 		editingLanguageId={store.editingLanguageId}
 		name={name}
 		onRemoveButton={() => dispatch('fieldRemoved', name)}
 		onRepeatButton={() => dispatch('fieldRepeated', name)}
+		required={required}
 	/>
 );
 

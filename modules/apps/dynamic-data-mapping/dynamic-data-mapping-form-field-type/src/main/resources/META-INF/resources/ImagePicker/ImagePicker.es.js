@@ -269,6 +269,7 @@ const ImagePickerProxy = connectStore(
 				id={id}
 				name={name}
 				readOnly={readOnly}
+				required={required}
 			>
 				<ImagePicker
 					id={id}

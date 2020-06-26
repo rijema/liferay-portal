@@ -116,8 +116,8 @@ const Main = ({
 	...otherProps
 }) => {
 	return (
-		<fieldset aria-required={required}>
-		<FieldBaseProxy {...otherProps} id={id} name={name} readOnly={readOnly}>
+		<FieldBaseProxy {...otherProps} id={id} name={name} required={required} readOnly={readOnly}>
+		<fieldset aria-label="Field" aria-required={required}>
 			<RichText
 				data={value || predefinedValue}
 				id={id}
@@ -125,8 +125,8 @@ const Main = ({
 				onChange={onChange}
 				readOnly={readOnly}
 			/>
-		</FieldBaseProxy>
 		</fieldset>
+		</FieldBaseProxy>
 	);
 };
 

@@ -20,25 +20,24 @@ import {FieldBaseProxy} from '../FieldBase/ReactFieldBase.es';
 import getConnectedReactComponentAdapter from '../util/ReactComponentAdapter.es';
 import {connectStore} from '../util/connectStore.es';
 
-const TableHead = ({columns,required}) => (
-	<ClayTable.Head>
-		<ClayTable.Row>
-			<ClayTable.Cell headingCell />
-			{columns.map((column, colIndex) => {
-				if (column.value) {
-					return (
-						<ClayTable.Cell
-							aria-required={required}
-							headingCell
-							key={`column-${column.value}-${colIndex}`}
-						>
-							{column.label}
-						</ClayTable.Cell>
-					);
-				}
-			})}
-		</ClayTable.Row>
-	</ClayTable.Head>
+const TableHead = ({columns}) => (
+		<ClayTable.Head>
+			<ClayTable.Row>
+				<ClayTable.Cell headingCell />
+				{columns.map((column, colIndex) => {
+					if (column.value) {
+						return (
+							<ClayTable.Cell
+								headingCell
+								key={`column-${column.value}-${colIndex}`}
+							>
+								{column.label}
+							</ClayTable.Cell>
+						);
+					}
+				})}
+			</ClayTable.Row>
+		</ClayTable.Head>
 );
 
 const TableBodyColumns = ({
@@ -84,6 +83,7 @@ const Grid = ({
 	...otherProps
 }) => (
 	<div className="table-responsive" {...otherProps}>
+		<fieldset aria-label="Field" aria-required={required}>
 		{!disabled &&
 			rows.map((row, rowIndex) => {
 				const inputValue = value[row.value]
@@ -102,7 +102,7 @@ const Grid = ({
 			})}
 
 		<ClayTable striped>
-			<TableHead columns={columns} required={required}/>
+			<TableHead columns={columns}/>
 
 			<ClayTable.Body>
 				{rows.map((row, rowIndex) => {
@@ -132,6 +132,7 @@ const Grid = ({
 				})}
 			</ClayTable.Body>
 		</ClayTable>
+		</fieldset>
 	</div>
 );
 
@@ -140,7 +141,7 @@ const GridProxy = connectStore(
 		const [state, setState] = useState(value);
 
 		return (
-			<FieldBaseProxy name={name} readOnly={readOnly} {...otherProps}>
+			<FieldBaseProxy name={name} readOnly={readOnly} required={required} {...otherProps}>
 				<Grid
 					columns={columns}
 					disabled={readOnly}

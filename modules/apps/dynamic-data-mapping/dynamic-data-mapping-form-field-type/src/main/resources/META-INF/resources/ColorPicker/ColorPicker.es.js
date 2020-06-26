@@ -99,6 +99,7 @@ const ColorPickerProxy = connectStore(
 			dispatch={dispatch}
 			name={name}
 			readOnly={readOnly}
+			required={required}
 			spritemap={spritemap}
 			{...otherProps}
 		>

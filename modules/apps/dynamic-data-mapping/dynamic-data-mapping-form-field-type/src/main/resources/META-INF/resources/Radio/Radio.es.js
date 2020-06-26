@@ -36,6 +36,7 @@ const Radio = ({
 
 	return (
 		<div className="ddm-radio" onBlur={onBlur} onFocus={onFocus}>
+		<fieldset aria-label="Field" aria-required={required}>
 			{options.map((option) => (
 				<ClayRadio
 					checked={currentValue === option.value}
@@ -49,10 +50,10 @@ const Radio = ({
 
 						onChange(event);
 					}}
-					aria-required={required}
 					value={option.value}
 				/>
 			))}
+		</fieldset>
 		</div>
 	);
 };
@@ -86,7 +87,7 @@ const RadioProxy = connectStore(
 		}, [predefinedValue]);
 
 		return (
-			<FieldBaseProxy {...otherProps} name={name} readOnly={readOnly}>
+			<FieldBaseProxy {...otherProps} name={name} readOnly={readOnly} required={required}>
 				<Radio
 					disabled={readOnly}
 					inline={inline}
