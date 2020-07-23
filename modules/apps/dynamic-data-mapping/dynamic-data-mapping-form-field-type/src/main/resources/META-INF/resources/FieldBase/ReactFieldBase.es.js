@@ -125,37 +125,41 @@ function FieldBase({
 					</div>
 				)}
 
-				{((label && showLabel) ||
-					required ||
-					tooltip ||
-					repeatable) && (
-					<p
-						className={classNames({
-							'ddm-empty': !showLabel && !required,
-							'ddm-label': showLabel,
-						})}
-					>
-						{label && showLabel && label}
+				<fieldset>
+					{((label && showLabel) ||
+						required ||
+						tooltip ||
+						repeatable) && (
+						<legend>
+							<p
+								className={classNames({
+									'ddm-empty': !showLabel && !required,
+									'ddm-label': showLabel,
+								})}
+							>
+								{label && showLabel && label}
+		
+								{required && (
+									<span className="reference-mark">
+										<ClayIcon symbol="asterisk" />
+									</span>
+								)}
+		
+								{tooltip && (
+									<span className="ddm-tooltip">
+										<ClayIcon
+											data-tooltip-align="right"
+											symbol="question-circle-full"
+											title={tooltip}
+										/>
+									</span>
+								)}
+							</p>
+						</legend>
+					)}
 
-						{required && (
-							<span className="reference-mark">
-								<ClayIcon symbol="asterisk" />
-							</span>
-						)}
-
-						{tooltip && (
-							<span className="ddm-tooltip">
-								<ClayIcon
-									data-tooltip-align="right"
-									symbol="question-circle-full"
-									title={tooltip}
-								/>
-							</span>
-						)}
-					</p>
-				)}
-
-				{children}
+					{children}
+				</fieldset>
 
 				{nestedFields && <Layout rows={getDefaultRows(nestedFields)} />}
 
