@@ -6,207 +6,221 @@ exports[`Options shows the options 1`] = `
     class="form-group hide"
     data-field-name="options"
   >
-    <div
-      class="ddm-field-options-container"
-    >
+    <fieldset>
       <div
-        class="ddm-options-target"
-      />
-      <div
-        class="ddm-field-options"
+        class="ddm-field-options-container"
       >
-        <span
-          class="ddm-options-drag"
-          draggable="true"
-        >
-          <svg
-            class="lexicon-icon lexicon-icon-drag"
-            role="presentation"
-          >
-            <use
-              xlink:href="#drag"
-            />
-          </svg>
-        </span>
         <div
-          class="ddm-option-entry"
+          class="ddm-options-target"
+        />
+        <div
+          class="ddm-field-options"
         >
-          <div
-            class="form-group hide"
-            data-field-name="option0"
-          >
-            <div
-              class="form-group hide"
-              data-field-name="keyValueLabeloption0"
-            >
-              <input
-                aria-label="text"
-                class="form-control ddm-field-text"
-                name="keyValueLabeloption0"
-                placeholder="enter-an-option"
-                type="text"
-                value="Option 1"
-              />
-            </div>
-            <div
-              class="active form-text key-value-editor"
-            >
-              <label
-                class="control-label key-value-label"
-              >
-                field-id
-                :
-              </label>
-              <input
-                class="key-value-input"
-                type="text"
-                value="Option1"
-              />
-            </div>
-          </div>
-          <button
-            class="close close-modal"
-            type="button"
+          <span
+            class="ddm-options-drag"
+            draggable="true"
           >
             <svg
-              class="lexicon-icon lexicon-icon-times"
+              class="lexicon-icon lexicon-icon-drag"
               role="presentation"
             >
               <use
-                xlink:href="#times"
+                xlink:href="#drag"
               />
             </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="ddm-options-target"
-      />
-      <div
-        class="ddm-field-options"
-      >
-        <span
-          class="ddm-options-drag"
-          draggable="true"
-        >
-          <svg
-            class="lexicon-icon lexicon-icon-drag"
-            role="presentation"
-          >
-            <use
-              xlink:href="#drag"
-            />
-          </svg>
-        </span>
-        <div
-          class="ddm-option-entry"
-        >
+          </span>
           <div
-            class="form-group hide"
-            data-field-name="option1"
+            class="ddm-option-entry"
           >
             <div
               class="form-group hide"
-              data-field-name="keyValueLabeloption1"
+              data-field-name="option0"
             >
-              <input
-                aria-label="text"
-                class="form-control ddm-field-text"
-                name="keyValueLabeloption1"
-                placeholder="enter-an-option"
-                type="text"
-                value="Option 2"
-              />
+              <fieldset>
+                <div
+                  class="form-group hide"
+                  data-field-name="keyValueLabeloption0"
+                >
+                  <fieldset>
+                    <input
+                      aria-label="text"
+                      class="form-control ddm-field-text"
+                      name="keyValueLabeloption0"
+                      placeholder="enter-an-option"
+                      type="text"
+                      value="Option 1"
+                    />
+                  </fieldset>
+                </div>
+                <div
+                  class="active form-text key-value-editor"
+                >
+                  <label
+                    class="control-label key-value-label"
+                  >
+                    field-id
+                    :
+                  </label>
+                  <input
+                    class="key-value-input"
+                    type="text"
+                    value="Option1"
+                  />
+                </div>
+              </fieldset>
             </div>
-            <div
-              class="active form-text key-value-editor"
+            <button
+              class="close close-modal"
+              type="button"
             >
-              <label
-                class="control-label key-value-label"
+              <svg
+                class="lexicon-icon lexicon-icon-times"
+                role="presentation"
               >
-                field-id
-                :
-              </label>
-              <input
-                class="key-value-input"
-                type="text"
-                value="Option2"
-              />
-            </div>
+                <use
+                  xlink:href="#times"
+                />
+              </svg>
+            </button>
           </div>
-          <button
-            class="close close-modal"
-            type="button"
+        </div>
+        <div
+          class="ddm-options-target"
+        />
+        <div
+          class="ddm-field-options"
+        >
+          <span
+            class="ddm-options-drag"
+            draggable="true"
           >
             <svg
-              class="lexicon-icon lexicon-icon-times"
+              class="lexicon-icon lexicon-icon-drag"
               role="presentation"
             >
               <use
-                xlink:href="#times"
+                xlink:href="#drag"
               />
             </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="ddm-options-target"
-      />
-      <div
-        class="ddm-field-options"
-      >
-        <span
-          class="ddm-options-drag"
-          draggable="true"
-        >
-          <svg
-            class="lexicon-icon lexicon-icon-drag"
-            role="presentation"
-          >
-            <use
-              xlink:href="#drag"
-            />
-          </svg>
-        </span>
-        <div
-          class="ddm-option-entry"
-        >
+          </span>
           <div
-            class="form-group hide"
-            data-field-name="option2"
+            class="ddm-option-entry"
           >
             <div
               class="form-group hide"
-              data-field-name="keyValueLabeloption2"
+              data-field-name="option1"
             >
-              <input
-                aria-label="text"
-                class="form-control ddm-field-text"
-                name="keyValueLabeloption2"
-                placeholder="enter-an-option"
-                type="text"
-                value=""
-              />
+              <fieldset>
+                <div
+                  class="form-group hide"
+                  data-field-name="keyValueLabeloption1"
+                >
+                  <fieldset>
+                    <input
+                      aria-label="text"
+                      class="form-control ddm-field-text"
+                      name="keyValueLabeloption1"
+                      placeholder="enter-an-option"
+                      type="text"
+                      value="Option 2"
+                    />
+                  </fieldset>
+                </div>
+                <div
+                  class="active form-text key-value-editor"
+                >
+                  <label
+                    class="control-label key-value-label"
+                  >
+                    field-id
+                    :
+                  </label>
+                  <input
+                    class="key-value-input"
+                    type="text"
+                    value="Option2"
+                  />
+                </div>
+              </fieldset>
             </div>
-            <div
-              class="active form-text key-value-editor"
+            <button
+              class="close close-modal"
+              type="button"
             >
-              <label
-                class="control-label key-value-label"
+              <svg
+                class="lexicon-icon lexicon-icon-times"
+                role="presentation"
               >
-                field-id
-                :
-              </label>
-              <input
-                class="key-value-input"
-                type="text"
-                value=""
+                <use
+                  xlink:href="#times"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          class="ddm-options-target"
+        />
+        <div
+          class="ddm-field-options"
+        >
+          <span
+            class="ddm-options-drag"
+            draggable="true"
+          >
+            <svg
+              class="lexicon-icon lexicon-icon-drag"
+              role="presentation"
+            >
+              <use
+                xlink:href="#drag"
               />
+            </svg>
+          </span>
+          <div
+            class="ddm-option-entry"
+          >
+            <div
+              class="form-group hide"
+              data-field-name="option2"
+            >
+              <fieldset>
+                <div
+                  class="form-group hide"
+                  data-field-name="keyValueLabeloption2"
+                >
+                  <fieldset>
+                    <input
+                      aria-label="text"
+                      class="form-control ddm-field-text"
+                      name="keyValueLabeloption2"
+                      placeholder="enter-an-option"
+                      type="text"
+                      value=""
+                    />
+                  </fieldset>
+                </div>
+                <div
+                  class="active form-text key-value-editor"
+                >
+                  <label
+                    class="control-label key-value-label"
+                  >
+                    field-id
+                    :
+                  </label>
+                  <input
+                    class="key-value-input"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </fieldset>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </fieldset>
   </div>
 </div>
 `;

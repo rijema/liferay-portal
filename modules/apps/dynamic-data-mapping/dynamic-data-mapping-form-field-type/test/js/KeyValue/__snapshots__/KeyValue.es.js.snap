@@ -6,33 +6,37 @@ exports[`KeyValue has a helptext 1`] = `
     class="form-group hide"
     data-field-name="keyValue"
   >
-    <div
-      class="form-group hide"
-      data-field-name="keyValueLabelkeyValue"
-    >
-      <input
-        aria-label="text"
-        class="form-control ddm-field-text"
-        name="keyValueLabelkeyValue"
-        type="text"
-        value=""
-      />
-    </div>
-    <div
-      class="active form-text key-value-editor"
-    >
-      <label
-        class="control-label key-value-label"
+    <fieldset>
+      <div
+        class="form-group hide"
+        data-field-name="keyValueLabelkeyValue"
       >
-        field-id
-        :
-      </label>
-      <input
-        class="key-value-input"
-        type="text"
-        value=""
-      />
-    </div>
+        <fieldset>
+          <input
+            aria-label="text"
+            class="form-control ddm-field-text"
+            name="keyValueLabelkeyValue"
+            type="text"
+            value=""
+          />
+        </fieldset>
+      </div>
+      <div
+        class="active form-text key-value-editor"
+      >
+        <label
+          class="control-label key-value-label"
+        >
+          field-id
+          :
+        </label>
+        <input
+          class="key-value-input"
+          type="text"
+          value=""
+        />
+      </div>
+    </fieldset>
     <span
       class="form-text"
     >
@@ -48,38 +52,44 @@ exports[`KeyValue has a label 1`] = `
     class="form-group hide"
     data-field-name="keyValue"
   >
-    <p
-      class="ddm-label"
-    >
-      label
-    </p>
-    <div
-      class="form-group hide"
-      data-field-name="keyValueLabelkeyValue"
-    >
-      <input
-        aria-label="text"
-        class="form-control ddm-field-text"
-        name="keyValueLabelkeyValue"
-        type="text"
-        value=""
-      />
-    </div>
-    <div
-      class="active form-text key-value-editor"
-    >
-      <label
-        class="control-label key-value-label"
+    <fieldset>
+      <legend>
+        <p
+          class="ddm-label"
+        >
+          label
+        </p>
+      </legend>
+      <div
+        class="form-group hide"
+        data-field-name="keyValueLabelkeyValue"
       >
-        field-id
-        :
-      </label>
-      <input
-        class="key-value-input"
-        type="text"
-        value=""
-      />
-    </div>
+        <fieldset>
+          <input
+            aria-label="text"
+            class="form-control ddm-field-text"
+            name="keyValueLabelkeyValue"
+            type="text"
+            value=""
+          />
+        </fieldset>
+      </div>
+      <div
+        class="active form-text key-value-editor"
+      >
+        <label
+          class="control-label key-value-label"
+        >
+          field-id
+          :
+        </label>
+        <input
+          class="key-value-input"
+          type="text"
+          value=""
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -90,34 +100,38 @@ exports[`KeyValue has a predefined Value 1`] = `
     class="form-group hide"
     data-field-name="keyValue"
   >
-    <div
-      class="form-group hide"
-      data-field-name="keyValueLabelkeyValue"
-    >
-      <input
-        aria-label="text"
-        class="form-control ddm-field-text"
-        name="keyValueLabelkeyValue"
-        placeholder="Option 1"
-        type="text"
-        value=""
-      />
-    </div>
-    <div
-      class="active form-text key-value-editor"
-    >
-      <label
-        class="control-label key-value-label"
+    <fieldset>
+      <div
+        class="form-group hide"
+        data-field-name="keyValueLabelkeyValue"
       >
-        field-id
-        :
-      </label>
-      <input
-        class="key-value-input"
-        type="text"
-        value=""
-      />
-    </div>
+        <fieldset>
+          <input
+            aria-label="text"
+            class="form-control ddm-field-text"
+            name="keyValueLabelkeyValue"
+            placeholder="Option 1"
+            type="text"
+            value=""
+          />
+        </fieldset>
+      </div>
+      <div
+        class="active form-text key-value-editor"
+      >
+        <label
+          class="control-label key-value-label"
+        >
+          field-id
+          :
+        </label>
+        <input
+          class="key-value-input"
+          type="text"
+          value=""
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -128,33 +142,37 @@ exports[`KeyValue has a value 1`] = `
     class="form-group hide"
     data-field-name="keyValue"
   >
-    <div
-      class="form-group hide"
-      data-field-name="keyValueLabelkeyValue"
-    >
-      <input
-        aria-label="text"
-        class="form-control ddm-field-text"
-        name="keyValueLabelkeyValue"
-        type="text"
-        value="value"
-      />
-    </div>
-    <div
-      class="active form-text key-value-editor"
-    >
-      <label
-        class="control-label key-value-label"
+    <fieldset>
+      <div
+        class="form-group hide"
+        data-field-name="keyValueLabelkeyValue"
       >
-        field-id
-        :
-      </label>
-      <input
-        class="key-value-input"
-        type="text"
-        value=""
-      />
-    </div>
+        <fieldset>
+          <input
+            aria-label="text"
+            class="form-control ddm-field-text"
+            name="keyValueLabelkeyValue"
+            type="text"
+            value="value"
+          />
+        </fieldset>
+      </div>
+      <div
+        class="active form-text key-value-editor"
+      >
+        <label
+          class="control-label key-value-label"
+        >
+          field-id
+          :
+        </label>
+        <input
+          class="key-value-input"
+          type="text"
+          value=""
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -165,33 +183,37 @@ exports[`KeyValue has an id 1`] = `
     class="form-group hide"
     data-field-name="keyValue"
   >
-    <div
-      class="form-group hide"
-      data-field-name="keyValueLabelkeyValue"
-    >
-      <input
-        aria-label="text"
-        class="form-control ddm-field-text"
-        name="keyValueLabelkeyValue"
-        type="text"
-        value=""
-      />
-    </div>
-    <div
-      class="active form-text key-value-editor"
-    >
-      <label
-        class="control-label key-value-label"
+    <fieldset>
+      <div
+        class="form-group hide"
+        data-field-name="keyValueLabelkeyValue"
       >
-        field-id
-        :
-      </label>
-      <input
-        class="key-value-input"
-        type="text"
-        value=""
-      />
-    </div>
+        <fieldset>
+          <input
+            aria-label="text"
+            class="form-control ddm-field-text"
+            name="keyValueLabelkeyValue"
+            type="text"
+            value=""
+          />
+        </fieldset>
+      </div>
+      <div
+        class="active form-text key-value-editor"
+      >
+        <label
+          class="control-label key-value-label"
+        >
+          field-id
+          :
+        </label>
+        <input
+          class="key-value-input"
+          type="text"
+          value=""
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -202,34 +224,38 @@ exports[`KeyValue is not editable 1`] = `
     class="form-group hide"
     data-field-name="keyValue"
   >
-    <div
-      class="form-group hide"
-      data-field-name="keyValueLabelkeyValue"
-    >
-      <input
-        aria-label="text"
-        class="form-control ddm-field-text"
-        disabled=""
-        name="keyValueLabelkeyValue"
-        type="text"
-        value=""
-      />
-    </div>
-    <div
-      class="active form-text key-value-editor"
-    >
-      <label
-        class="control-label key-value-label"
+    <fieldset>
+      <div
+        class="form-group hide"
+        data-field-name="keyValueLabelkeyValue"
       >
-        field-id
-        :
-      </label>
-      <input
-        class="key-value-input"
-        type="text"
-        value=""
-      />
-    </div>
+        <fieldset>
+          <input
+            aria-label="text"
+            class="form-control ddm-field-text"
+            disabled=""
+            name="keyValueLabelkeyValue"
+            type="text"
+            value=""
+          />
+        </fieldset>
+      </div>
+      <div
+        class="active form-text key-value-editor"
+      >
+        <label
+          class="control-label key-value-label"
+        >
+          field-id
+          :
+        </label>
+        <input
+          class="key-value-input"
+          type="text"
+          value=""
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -240,33 +266,37 @@ exports[`KeyValue is not required 1`] = `
     class="form-group hide"
     data-field-name="keyValue"
   >
-    <div
-      class="form-group hide"
-      data-field-name="keyValueLabelkeyValue"
-    >
-      <input
-        aria-label="text"
-        class="form-control ddm-field-text"
-        name="keyValueLabelkeyValue"
-        type="text"
-        value=""
-      />
-    </div>
-    <div
-      class="active form-text key-value-editor"
-    >
-      <label
-        class="control-label key-value-label"
+    <fieldset>
+      <div
+        class="form-group hide"
+        data-field-name="keyValueLabelkeyValue"
       >
-        field-id
-        :
-      </label>
-      <input
-        class="key-value-input"
-        type="text"
-        value=""
-      />
-    </div>
+        <fieldset>
+          <input
+            aria-label="text"
+            class="form-control ddm-field-text"
+            name="keyValueLabelkeyValue"
+            type="text"
+            value=""
+          />
+        </fieldset>
+      </div>
+      <div
+        class="active form-text key-value-editor"
+      >
+        <label
+          class="control-label key-value-label"
+        >
+          field-id
+          :
+        </label>
+        <input
+          class="key-value-input"
+          type="text"
+          value=""
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -277,38 +307,44 @@ exports[`KeyValue renders Label if showLabel is true 1`] = `
     class="form-group hide"
     data-field-name="keyValue"
   >
-    <p
-      class="ddm-label"
-    >
-      text
-    </p>
-    <div
-      class="form-group hide"
-      data-field-name="keyValueLabelkeyValue"
-    >
-      <input
-        aria-label="text"
-        class="form-control ddm-field-text"
-        name="keyValueLabelkeyValue"
-        type="text"
-        value=""
-      />
-    </div>
-    <div
-      class="active form-text key-value-editor"
-    >
-      <label
-        class="control-label key-value-label"
+    <fieldset>
+      <legend>
+        <p
+          class="ddm-label"
+        >
+          text
+        </p>
+      </legend>
+      <div
+        class="form-group hide"
+        data-field-name="keyValueLabelkeyValue"
       >
-        field-id
-        :
-      </label>
-      <input
-        class="key-value-input"
-        type="text"
-        value=""
-      />
-    </div>
+        <fieldset>
+          <input
+            aria-label="text"
+            class="form-control ddm-field-text"
+            name="keyValueLabelkeyValue"
+            type="text"
+            value=""
+          />
+        </fieldset>
+      </div>
+      <div
+        class="active form-text key-value-editor"
+      >
+        <label
+          class="control-label key-value-label"
+        >
+          field-id
+          :
+        </label>
+        <input
+          class="key-value-input"
+          type="text"
+          value=""
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -319,33 +355,37 @@ exports[`KeyValue renders component with a key 1`] = `
     class="form-group hide"
     data-field-name="keyValue"
   >
-    <div
-      class="form-group hide"
-      data-field-name="keyValueLabelkeyValue"
-    >
-      <input
-        aria-label="text"
-        class="form-control ddm-field-text"
-        name="keyValueLabelkeyValue"
-        type="text"
-        value=""
-      />
-    </div>
-    <div
-      class="active form-text key-value-editor"
-    >
-      <label
-        class="control-label key-value-label"
+    <fieldset>
+      <div
+        class="form-group hide"
+        data-field-name="keyValueLabelkeyValue"
       >
-        field-id
-        :
-      </label>
-      <input
-        class="key-value-input"
-        type="text"
-        value="key"
-      />
-    </div>
+        <fieldset>
+          <input
+            aria-label="text"
+            class="form-control ddm-field-text"
+            name="keyValueLabelkeyValue"
+            type="text"
+            value=""
+          />
+        </fieldset>
+      </div>
+      <div
+        class="active form-text key-value-editor"
+      >
+        <label
+          class="control-label key-value-label"
+        >
+          field-id
+          :
+        </label>
+        <input
+          class="key-value-input"
+          type="text"
+          value="key"
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;

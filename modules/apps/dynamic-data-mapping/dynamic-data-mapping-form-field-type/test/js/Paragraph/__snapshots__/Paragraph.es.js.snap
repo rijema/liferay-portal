@@ -6,14 +6,16 @@ exports[`Field Paragraph has a key 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <div
-      class="form-group liferay-ddm-form-field-paragraph"
-      data-field-name="textField"
-    >
+    <fieldset>
       <div
-        class="liferay-ddm-form-field-paragraph-text"
-      />
-    </div>
+        class="form-group liferay-ddm-form-field-paragraph"
+        data-field-name="textField"
+      >
+        <div
+          class="liferay-ddm-form-field-paragraph-text"
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -24,19 +26,23 @@ exports[`Field Paragraph has a label 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <p
-      class="ddm-label"
-    >
-      label
-    </p>
-    <div
-      class="form-group liferay-ddm-form-field-paragraph"
-      data-field-name="textField"
-    >
+    <fieldset>
+      <legend>
+        <p
+          class="ddm-label"
+        >
+          label
+        </p>
+      </legend>
       <div
-        class="liferay-ddm-form-field-paragraph-text"
-      />
-    </div>
+        class="form-group liferay-ddm-form-field-paragraph"
+        data-field-name="textField"
+      >
+        <div
+          class="liferay-ddm-form-field-paragraph-text"
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -47,14 +53,16 @@ exports[`Field Paragraph has a placeholder 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <div
-      class="form-group liferay-ddm-form-field-paragraph"
-      data-field-name="textField"
-    >
+    <fieldset>
       <div
-        class="liferay-ddm-form-field-paragraph-text"
-      />
-    </div>
+        class="form-group liferay-ddm-form-field-paragraph"
+        data-field-name="textField"
+      >
+        <div
+          class="liferay-ddm-form-field-paragraph-text"
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -65,14 +73,16 @@ exports[`Field Paragraph has a value 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <div
-      class="form-group liferay-ddm-form-field-paragraph"
-      data-field-name="textField"
-    >
+    <fieldset>
       <div
-        class="liferay-ddm-form-field-paragraph-text"
-      />
-    </div>
+        class="form-group liferay-ddm-form-field-paragraph"
+        data-field-name="textField"
+      >
+        <div
+          class="liferay-ddm-form-field-paragraph-text"
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -83,14 +93,16 @@ exports[`Field Paragraph has an id 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <div
-      class="form-group liferay-ddm-form-field-paragraph"
-      data-field-name="textField"
-    >
+    <fieldset>
       <div
-        class="liferay-ddm-form-field-paragraph-text"
-      />
-    </div>
+        class="form-group liferay-ddm-form-field-paragraph"
+        data-field-name="textField"
+      >
+        <div
+          class="liferay-ddm-form-field-paragraph-text"
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -101,14 +113,16 @@ exports[`Field Paragraph is not required 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <div
-      class="form-group liferay-ddm-form-field-paragraph"
-      data-field-name="textField"
-    >
+    <fieldset>
       <div
-        class="liferay-ddm-form-field-paragraph-text"
-      />
-    </div>
+        class="form-group liferay-ddm-form-field-paragraph"
+        data-field-name="textField"
+      >
+        <div
+          class="liferay-ddm-form-field-paragraph-text"
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -119,14 +133,16 @@ exports[`Field Paragraph is readOnly 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <div
-      class="form-group liferay-ddm-form-field-paragraph"
-      data-field-name="textField"
-    >
+    <fieldset>
       <div
-        class="liferay-ddm-form-field-paragraph-text"
-      />
-    </div>
+        class="form-group liferay-ddm-form-field-paragraph"
+        data-field-name="textField"
+      >
+        <div
+          class="liferay-ddm-form-field-paragraph-text"
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -137,19 +153,23 @@ exports[`Field Paragraph renders Label if showLabel is true 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <p
-      class="ddm-label"
-    >
-      text
-    </p>
-    <div
-      class="form-group liferay-ddm-form-field-paragraph"
-      data-field-name="textField"
-    >
+    <fieldset>
+      <legend>
+        <p
+          class="ddm-label"
+        >
+          text
+        </p>
+      </legend>
       <div
-        class="liferay-ddm-form-field-paragraph-text"
-      />
-    </div>
+        class="form-group liferay-ddm-form-field-paragraph"
+        data-field-name="textField"
+      >
+        <div
+          class="liferay-ddm-form-field-paragraph-text"
+        />
+      </div>
+    </fieldset>
   </div>
 </div>
 `;

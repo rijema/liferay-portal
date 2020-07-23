@@ -6,13 +6,15 @@ exports[`Field Text has a helptext 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <input
-      aria-label="text"
-      class="form-control ddm-field-text"
-      name="textField"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <input
+        aria-label="text"
+        class="form-control ddm-field-text"
+        name="textField"
+        type="text"
+        value=""
+      />
+    </fieldset>
     <span
       class="form-text"
     >
@@ -28,18 +30,22 @@ exports[`Field Text has a label 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <p
-      class="ddm-label"
-    >
-      label
-    </p>
-    <input
-      aria-label="text"
-      class="form-control ddm-field-text"
-      name="textField"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <legend>
+        <p
+          class="ddm-label"
+        >
+          label
+        </p>
+      </legend>
+      <input
+        aria-label="text"
+        class="form-control ddm-field-text"
+        name="textField"
+        type="text"
+        value=""
+      />
+    </fieldset>
   </div>
 </div>
 `;
@@ -50,14 +56,16 @@ exports[`Field Text has a placeholder 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <input
-      aria-label="text"
-      class="form-control ddm-field-text"
-      name="textField"
-      placeholder="Placeholder"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <input
+        aria-label="text"
+        class="form-control ddm-field-text"
+        name="textField"
+        placeholder="Placeholder"
+        type="text"
+        value=""
+      />
+    </fieldset>
   </div>
 </div>
 `;
@@ -68,13 +76,15 @@ exports[`Field Text has a value 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <input
-      aria-label="text"
-      class="form-control ddm-field-text"
-      name="textField"
-      type="text"
-      value="value"
-    />
+    <fieldset>
+      <input
+        aria-label="text"
+        class="form-control ddm-field-text"
+        name="textField"
+        type="text"
+        value="value"
+      />
+    </fieldset>
   </div>
 </div>
 `;
@@ -85,14 +95,16 @@ exports[`Field Text has an id 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <input
-      aria-label="text"
-      class="form-control ddm-field-text"
-      id="Id"
-      name="textField"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <input
+        aria-label="text"
+        class="form-control ddm-field-text"
+        id="Id"
+        name="textField"
+        type="text"
+        value=""
+      />
+    </fieldset>
   </div>
 </div>
 `;
@@ -103,13 +115,15 @@ exports[`Field Text is not readOnly 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <input
-      aria-label="text"
-      class="form-control ddm-field-text"
-      name="textField"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <input
+        aria-label="text"
+        class="form-control ddm-field-text"
+        name="textField"
+        type="text"
+        value=""
+      />
+    </fieldset>
   </div>
 </div>
 `;
@@ -120,13 +134,15 @@ exports[`Field Text is not required 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <input
-      aria-label="text"
-      class="form-control ddm-field-text"
-      name="textField"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <input
+        aria-label="text"
+        class="form-control ddm-field-text"
+        name="textField"
+        type="text"
+        value=""
+      />
+    </fieldset>
   </div>
 </div>
 `;
@@ -137,18 +153,22 @@ exports[`Field Text renders Label if showLabel is true 1`] = `
     class="form-group hide"
     data-field-name="textField"
   >
-    <p
-      class="ddm-label"
-    >
-      text
-    </p>
-    <input
-      aria-label="text"
-      class="form-control ddm-field-text"
-      name="textField"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <legend>
+        <p
+          class="ddm-label"
+        >
+          text
+        </p>
+      </legend>
+      <input
+        aria-label="text"
+        class="form-control ddm-field-text"
+        name="textField"
+        type="text"
+        value=""
+      />
+    </fieldset>
   </div>
 </div>
 `;

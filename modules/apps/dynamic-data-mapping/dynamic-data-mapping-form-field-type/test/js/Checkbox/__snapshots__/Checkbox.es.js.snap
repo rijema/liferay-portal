@@ -5,27 +5,29 @@ exports[`Field Checkbox has a helptext 1`] = `
   <div
     class="form-group hide"
   >
-    <label
-      class="ddm-toggle-switch toggle-switch"
-    >
-      <input
-        checked=""
-        class="toggle-switch-check"
-        type="checkbox"
-        value="true"
-      />
-      <span
-        aria-hidden="true"
-        class="toggle-switch-bar"
+    <fieldset>
+      <label
+        class="ddm-toggle-switch toggle-switch"
       >
-        <span
-          class="toggle-switch-handle"
+        <input
+          checked=""
+          class="toggle-switch-check"
+          type="checkbox"
+          value="true"
         />
         <span
-          class="toggle-switch-text toggle-switch-text-right"
-        />
-      </span>
-    </label>
+          aria-hidden="true"
+          class="toggle-switch-bar"
+        >
+          <span
+            class="toggle-switch-handle"
+          />
+          <span
+            class="toggle-switch-text toggle-switch-text-right"
+          />
+        </span>
+      </label>
+    </fieldset>
     <span
       class="form-text"
     >
@@ -40,27 +42,29 @@ exports[`Field Checkbox has a key 1`] = `
   <div
     class="form-group hide"
   >
-    <label
-      class="ddm-toggle-switch toggle-switch"
-    >
-      <input
-        checked=""
-        class="toggle-switch-check"
-        type="checkbox"
-        value="true"
-      />
-      <span
-        aria-hidden="true"
-        class="toggle-switch-bar"
+    <fieldset>
+      <label
+        class="ddm-toggle-switch toggle-switch"
       >
-        <span
-          class="toggle-switch-handle"
+        <input
+          checked=""
+          class="toggle-switch-check"
+          type="checkbox"
+          value="true"
         />
         <span
-          class="toggle-switch-text toggle-switch-text-right"
-        />
-      </span>
-    </label>
+          aria-hidden="true"
+          class="toggle-switch-bar"
+        >
+          <span
+            class="toggle-switch-handle"
+          />
+          <span
+            class="toggle-switch-text toggle-switch-text-right"
+          />
+        </span>
+      </label>
+    </fieldset>
   </div>
 </div>
 `;
@@ -70,29 +74,31 @@ exports[`Field Checkbox has a label 1`] = `
   <div
     class="form-group hide"
   >
-    <label
-      class="ddm-toggle-switch toggle-switch"
-    >
-      <input
-        checked=""
-        class="toggle-switch-check"
-        type="checkbox"
-        value="true"
-      />
-      <span
-        aria-hidden="true"
-        class="toggle-switch-bar"
+    <fieldset>
+      <label
+        class="ddm-toggle-switch toggle-switch"
       >
-        <span
-          class="toggle-switch-handle"
+        <input
+          checked=""
+          class="toggle-switch-check"
+          type="checkbox"
+          value="true"
         />
         <span
-          class="toggle-switch-text toggle-switch-text-right"
+          aria-hidden="true"
+          class="toggle-switch-bar"
         >
-          label
+          <span
+            class="toggle-switch-handle"
+          />
+          <span
+            class="toggle-switch-text toggle-switch-text-right"
+          >
+            label
+          </span>
         </span>
-      </span>
-    </label>
+      </label>
+    </fieldset>
   </div>
 </div>
 `;
@@ -102,27 +108,29 @@ exports[`Field Checkbox has a predefined Value 1`] = `
   <div
     class="form-group hide"
   >
-    <label
-      class="ddm-toggle-switch toggle-switch"
-    >
-      <input
-        checked=""
-        class="toggle-switch-check"
-        type="checkbox"
-        value="true"
-      />
-      <span
-        aria-hidden="true"
-        class="toggle-switch-bar"
+    <fieldset>
+      <label
+        class="ddm-toggle-switch toggle-switch"
       >
-        <span
-          class="toggle-switch-handle"
+        <input
+          checked=""
+          class="toggle-switch-check"
+          type="checkbox"
+          value="true"
         />
         <span
-          class="toggle-switch-text toggle-switch-text-right"
-        />
-      </span>
-    </label>
+          aria-hidden="true"
+          class="toggle-switch-bar"
+        >
+          <span
+            class="toggle-switch-handle"
+          />
+          <span
+            class="toggle-switch-text toggle-switch-text-right"
+          />
+        </span>
+      </label>
+    </fieldset>
   </div>
 </div>
 `;
@@ -132,27 +140,29 @@ exports[`Field Checkbox has a spritemap 1`] = `
   <div
     class="form-group hide"
   >
-    <label
-      class="ddm-toggle-switch toggle-switch"
-    >
-      <input
-        checked=""
-        class="toggle-switch-check"
-        type="checkbox"
-        value="true"
-      />
-      <span
-        aria-hidden="true"
-        class="toggle-switch-bar"
+    <fieldset>
+      <label
+        class="ddm-toggle-switch toggle-switch"
       >
-        <span
-          class="toggle-switch-handle"
+        <input
+          checked=""
+          class="toggle-switch-check"
+          type="checkbox"
+          value="true"
         />
         <span
-          class="toggle-switch-text toggle-switch-text-right"
-        />
-      </span>
-    </label>
+          aria-hidden="true"
+          class="toggle-switch-bar"
+        >
+          <span
+            class="toggle-switch-handle"
+          />
+          <span
+            class="toggle-switch-text toggle-switch-text-right"
+          />
+        </span>
+      </label>
+    </fieldset>
   </div>
 </div>
 `;
@@ -162,27 +172,29 @@ exports[`Field Checkbox has a value 1`] = `
   <div
     class="form-group hide"
   >
-    <label
-      class="ddm-toggle-switch toggle-switch"
-    >
-      <input
-        checked=""
-        class="toggle-switch-check"
-        type="checkbox"
-        value="true"
-      />
-      <span
-        aria-hidden="true"
-        class="toggle-switch-bar"
+    <fieldset>
+      <label
+        class="ddm-toggle-switch toggle-switch"
       >
-        <span
-          class="toggle-switch-handle"
+        <input
+          checked=""
+          class="toggle-switch-check"
+          type="checkbox"
+          value="true"
         />
         <span
-          class="toggle-switch-text toggle-switch-text-right"
-        />
-      </span>
-    </label>
+          aria-hidden="true"
+          class="toggle-switch-bar"
+        >
+          <span
+            class="toggle-switch-handle"
+          />
+          <span
+            class="toggle-switch-text toggle-switch-text-right"
+          />
+        </span>
+      </label>
+    </fieldset>
   </div>
 </div>
 `;
@@ -192,27 +204,29 @@ exports[`Field Checkbox has an id 1`] = `
   <div
     class="form-group hide"
   >
-    <label
-      class="ddm-toggle-switch toggle-switch"
-    >
-      <input
-        checked=""
-        class="toggle-switch-check"
-        type="checkbox"
-        value="true"
-      />
-      <span
-        aria-hidden="true"
-        class="toggle-switch-bar"
+    <fieldset>
+      <label
+        class="ddm-toggle-switch toggle-switch"
       >
-        <span
-          class="toggle-switch-handle"
+        <input
+          checked=""
+          class="toggle-switch-check"
+          type="checkbox"
+          value="true"
         />
         <span
-          class="toggle-switch-text toggle-switch-text-right"
-        />
-      </span>
-    </label>
+          aria-hidden="true"
+          class="toggle-switch-bar"
+        >
+          <span
+            class="toggle-switch-handle"
+          />
+          <span
+            class="toggle-switch-text toggle-switch-text-right"
+          />
+        </span>
+      </label>
+    </fieldset>
   </div>
 </div>
 `;
@@ -222,27 +236,29 @@ exports[`Field Checkbox is not editable 1`] = `
   <div
     class="form-group hide"
   >
-    <label
-      class="ddm-toggle-switch toggle-switch"
-    >
-      <input
-        checked=""
-        class="toggle-switch-check"
-        type="checkbox"
-        value="true"
-      />
-      <span
-        aria-hidden="true"
-        class="toggle-switch-bar"
+    <fieldset>
+      <label
+        class="ddm-toggle-switch toggle-switch"
       >
-        <span
-          class="toggle-switch-handle"
+        <input
+          checked=""
+          class="toggle-switch-check"
+          type="checkbox"
+          value="true"
         />
         <span
-          class="toggle-switch-text toggle-switch-text-right"
-        />
-      </span>
-    </label>
+          aria-hidden="true"
+          class="toggle-switch-bar"
+        >
+          <span
+            class="toggle-switch-handle"
+          />
+          <span
+            class="toggle-switch-text toggle-switch-text-right"
+          />
+        </span>
+      </label>
+    </fieldset>
   </div>
 </div>
 `;
@@ -252,27 +268,29 @@ exports[`Field Checkbox is not required 1`] = `
   <div
     class="form-group hide"
   >
-    <label
-      class="ddm-toggle-switch toggle-switch"
-    >
-      <input
-        checked=""
-        class="toggle-switch-check"
-        type="checkbox"
-        value="true"
-      />
-      <span
-        aria-hidden="true"
-        class="toggle-switch-bar"
+    <fieldset>
+      <label
+        class="ddm-toggle-switch toggle-switch"
       >
-        <span
-          class="toggle-switch-handle"
+        <input
+          checked=""
+          class="toggle-switch-check"
+          type="checkbox"
+          value="true"
         />
         <span
-          class="toggle-switch-text toggle-switch-text-right"
-        />
-      </span>
-    </label>
+          aria-hidden="true"
+          class="toggle-switch-bar"
+        >
+          <span
+            class="toggle-switch-handle"
+          />
+          <span
+            class="toggle-switch-text toggle-switch-text-right"
+          />
+        </span>
+      </label>
+    </fieldset>
   </div>
 </div>
 `;
@@ -282,27 +300,29 @@ exports[`Field Checkbox is shown as a switcher 1`] = `
   <div
     class="form-group hide"
   >
-    <label
-      class="ddm-toggle-switch toggle-switch"
-    >
-      <input
-        checked=""
-        class="toggle-switch-check"
-        type="checkbox"
-        value="true"
-      />
-      <span
-        aria-hidden="true"
-        class="toggle-switch-bar"
+    <fieldset>
+      <label
+        class="ddm-toggle-switch toggle-switch"
       >
-        <span
-          class="toggle-switch-handle"
+        <input
+          checked=""
+          class="toggle-switch-check"
+          type="checkbox"
+          value="true"
         />
         <span
-          class="toggle-switch-text toggle-switch-text-right"
-        />
-      </span>
-    </label>
+          aria-hidden="true"
+          class="toggle-switch-bar"
+        >
+          <span
+            class="toggle-switch-handle"
+          />
+          <span
+            class="toggle-switch-text toggle-switch-text-right"
+          />
+        </span>
+      </label>
+    </fieldset>
   </div>
 </div>
 `;
@@ -312,20 +332,22 @@ exports[`Field Checkbox is shown as checkbox 1`] = `
   <div
     class="form-group hide"
   >
-    <div
-      class="custom-control custom-checkbox"
-    >
-      <label>
-        <input
-          checked=""
-          class="custom-control-input"
-          type="checkbox"
-        />
-        <span
-          class="custom-control-label"
-        />
-      </label>
-    </div>
+    <fieldset>
+      <div
+        class="custom-control custom-checkbox"
+      >
+        <label>
+          <input
+            checked=""
+            class="custom-control-input"
+            type="checkbox"
+          />
+          <span
+            class="custom-control-label"
+          />
+        </label>
+      </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -335,27 +357,29 @@ exports[`Field Checkbox renders Label if showLabel is true 1`] = `
   <div
     class="form-group hide"
   >
-    <label
-      class="ddm-toggle-switch toggle-switch"
-    >
-      <input
-        checked=""
-        class="toggle-switch-check"
-        type="checkbox"
-        value="true"
-      />
-      <span
-        aria-hidden="true"
-        class="toggle-switch-bar"
+    <fieldset>
+      <label
+        class="ddm-toggle-switch toggle-switch"
       >
-        <span
-          class="toggle-switch-handle"
+        <input
+          checked=""
+          class="toggle-switch-check"
+          type="checkbox"
+          value="true"
         />
         <span
-          class="toggle-switch-text toggle-switch-text-right"
-        />
-      </span>
-    </label>
+          aria-hidden="true"
+          class="toggle-switch-bar"
+        >
+          <span
+            class="toggle-switch-handle"
+          />
+          <span
+            class="toggle-switch-text toggle-switch-text-right"
+          />
+        </span>
+      </label>
+    </fieldset>
   </div>
 </div>
 `;

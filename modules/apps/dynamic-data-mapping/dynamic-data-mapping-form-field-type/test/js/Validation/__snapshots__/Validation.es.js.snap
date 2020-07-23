@@ -9,29 +9,31 @@ exports[`Validation renders checkbox to enable Validation 1`] = `
       class="form-group hide"
       data-field-name="enableValidation"
     >
-      <label
-        class="ddm-toggle-switch toggle-switch"
-      >
-        <input
-          class="toggle-switch-check"
-          name="enableValidation"
-          type="checkbox"
-          value="true"
-        />
-        <span
-          aria-hidden="true"
-          class="toggle-switch-bar"
+      <fieldset>
+        <label
+          class="ddm-toggle-switch toggle-switch"
         >
-          <span
-            class="toggle-switch-handle"
+          <input
+            class="toggle-switch-check"
+            name="enableValidation"
+            type="checkbox"
+            value="true"
           />
           <span
-            class="toggle-switch-text toggle-switch-text-right"
+            aria-hidden="true"
+            class="toggle-switch-bar"
           >
-            Validator
+            <span
+              class="toggle-switch-handle"
+            />
+            <span
+              class="toggle-switch-text toggle-switch-text-right"
+            >
+              Validator
+            </span>
           </span>
-        </span>
-      </label>
+        </label>
+      </fieldset>
     </div>
   </div>
 </div>

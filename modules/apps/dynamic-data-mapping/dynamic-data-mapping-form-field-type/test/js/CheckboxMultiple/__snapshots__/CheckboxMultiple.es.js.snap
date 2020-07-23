@@ -5,62 +5,64 @@ exports[`Field Checkbox Multiple has a helptext 1`] = `
   <div
     class="form-group hide"
   >
-    <div
-      class="lfr-ddm-checkbox-multiple"
-    >
+    <fieldset>
       <div
-        class="lfr-ddm-form-field-checkbox-switch"
+        class="lfr-ddm-checkbox-multiple"
       >
-        <label
-          class="simple-toggle-switch toggle-switch"
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option1"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option1"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 1
-          </span>
-        </label>
-      </div>
-      <div
-        class="lfr-ddm-form-field-checkbox-switch"
-      >
-        <label
-          class="simple-toggle-switch toggle-switch"
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 1
+            </span>
+          </label>
+        </div>
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option2"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option2"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 2
-          </span>
-        </label>
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 2
+            </span>
+          </label>
+        </div>
       </div>
-    </div>
+    </fieldset>
     <span
       class="form-text"
     >
@@ -75,62 +77,64 @@ exports[`Field Checkbox Multiple has a key 1`] = `
   <div
     class="form-group hide"
   >
-    <div
-      class="lfr-ddm-checkbox-multiple"
-    >
+    <fieldset>
       <div
-        class="lfr-ddm-form-field-checkbox-switch"
+        class="lfr-ddm-checkbox-multiple"
       >
-        <label
-          class="simple-toggle-switch toggle-switch"
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option1"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option1"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 1
-          </span>
-        </label>
-      </div>
-      <div
-        class="lfr-ddm-form-field-checkbox-switch"
-      >
-        <label
-          class="simple-toggle-switch toggle-switch"
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 1
+            </span>
+          </label>
+        </div>
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option2"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option2"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 2
-          </span>
-        </label>
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 2
+            </span>
+          </label>
+        </div>
       </div>
-    </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -140,67 +144,71 @@ exports[`Field Checkbox Multiple has a label 1`] = `
   <div
     class="form-group hide"
   >
-    <p
-      class="ddm-label"
-    >
-      label
-    </p>
-    <div
-      class="lfr-ddm-checkbox-multiple"
-    >
-      <div
-        class="lfr-ddm-form-field-checkbox-switch"
-      >
-        <label
-          class="simple-toggle-switch toggle-switch"
+    <fieldset>
+      <legend>
+        <p
+          class="ddm-label"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option1"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
-          >
-            <span
-              class="toggle-switch-handle"
-            />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 1
-          </span>
-        </label>
-      </div>
+          label
+        </p>
+      </legend>
       <div
-        class="lfr-ddm-form-field-checkbox-switch"
+        class="lfr-ddm-checkbox-multiple"
       >
-        <label
-          class="simple-toggle-switch toggle-switch"
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option2"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option1"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 1
+            </span>
+          </label>
+        </div>
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
+        >
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            Option 2
-          </span>
-        </label>
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option2"
+            />
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 2
+            </span>
+          </label>
+        </div>
       </div>
-    </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -210,62 +218,64 @@ exports[`Field Checkbox Multiple has a predefined Value 1`] = `
   <div
     class="form-group hide"
   >
-    <div
-      class="lfr-ddm-checkbox-multiple"
-    >
+    <fieldset>
       <div
-        class="lfr-ddm-form-field-checkbox-switch"
+        class="lfr-ddm-checkbox-multiple"
       >
-        <label
-          class="simple-toggle-switch toggle-switch"
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option1"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option1"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 1
-          </span>
-        </label>
-      </div>
-      <div
-        class="lfr-ddm-form-field-checkbox-switch"
-      >
-        <label
-          class="simple-toggle-switch toggle-switch"
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 1
+            </span>
+          </label>
+        </div>
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option2"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option2"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 2
-          </span>
-        </label>
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 2
+            </span>
+          </label>
+        </div>
       </div>
-    </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -275,62 +285,64 @@ exports[`Field Checkbox Multiple has a spritemap 1`] = `
   <div
     class="form-group hide"
   >
-    <div
-      class="lfr-ddm-checkbox-multiple"
-    >
+    <fieldset>
       <div
-        class="lfr-ddm-form-field-checkbox-switch"
+        class="lfr-ddm-checkbox-multiple"
       >
-        <label
-          class="simple-toggle-switch toggle-switch"
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option1"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option1"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 1
-          </span>
-        </label>
-      </div>
-      <div
-        class="lfr-ddm-form-field-checkbox-switch"
-      >
-        <label
-          class="simple-toggle-switch toggle-switch"
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 1
+            </span>
+          </label>
+        </div>
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option2"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option2"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 2
-          </span>
-        </label>
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 2
+            </span>
+          </label>
+        </div>
       </div>
-    </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -340,62 +352,64 @@ exports[`Field Checkbox Multiple has a value 1`] = `
   <div
     class="form-group hide"
   >
-    <div
-      class="lfr-ddm-checkbox-multiple"
-    >
+    <fieldset>
       <div
-        class="lfr-ddm-form-field-checkbox-switch"
+        class="lfr-ddm-checkbox-multiple"
       >
-        <label
-          class="simple-toggle-switch toggle-switch"
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option1"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option1"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 1
-          </span>
-        </label>
-      </div>
-      <div
-        class="lfr-ddm-form-field-checkbox-switch"
-      >
-        <label
-          class="simple-toggle-switch toggle-switch"
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 1
+            </span>
+          </label>
+        </div>
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option2"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option2"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 2
-          </span>
-        </label>
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 2
+            </span>
+          </label>
+        </div>
       </div>
-    </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -405,62 +419,64 @@ exports[`Field Checkbox Multiple has an id 1`] = `
   <div
     class="form-group hide"
   >
-    <div
-      class="lfr-ddm-checkbox-multiple"
-    >
+    <fieldset>
       <div
-        class="lfr-ddm-form-field-checkbox-switch"
+        class="lfr-ddm-checkbox-multiple"
       >
-        <label
-          class="simple-toggle-switch toggle-switch"
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option1"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option1"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 1
-          </span>
-        </label>
-      </div>
-      <div
-        class="lfr-ddm-form-field-checkbox-switch"
-      >
-        <label
-          class="simple-toggle-switch toggle-switch"
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 1
+            </span>
+          </label>
+        </div>
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option2"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option2"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 2
-          </span>
-        </label>
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 2
+            </span>
+          </label>
+        </div>
       </div>
-    </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -470,64 +486,66 @@ exports[`Field Checkbox Multiple is not editable 1`] = `
   <div
     class="form-group hide"
   >
-    <div
-      class="lfr-ddm-checkbox-multiple"
-    >
+    <fieldset>
       <div
-        class="lfr-ddm-form-field-checkbox-switch"
+        class="lfr-ddm-checkbox-multiple"
       >
-        <label
-          class="simple-toggle-switch toggle-switch"
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            disabled=""
-            type="checkbox"
-            value="option1"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              disabled=""
+              type="checkbox"
+              value="option1"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 1
-          </span>
-        </label>
-      </div>
-      <div
-        class="lfr-ddm-form-field-checkbox-switch"
-      >
-        <label
-          class="simple-toggle-switch toggle-switch"
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 1
+            </span>
+          </label>
+        </div>
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            disabled=""
-            type="checkbox"
-            value="option2"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              disabled=""
+              type="checkbox"
+              value="option2"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 2
-          </span>
-        </label>
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 2
+            </span>
+          </label>
+        </div>
       </div>
-    </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -537,62 +555,64 @@ exports[`Field Checkbox Multiple is not required 1`] = `
   <div
     class="form-group hide"
   >
-    <div
-      class="lfr-ddm-checkbox-multiple"
-    >
+    <fieldset>
       <div
-        class="lfr-ddm-form-field-checkbox-switch"
+        class="lfr-ddm-checkbox-multiple"
       >
-        <label
-          class="simple-toggle-switch toggle-switch"
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option1"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option1"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 1
-          </span>
-        </label>
-      </div>
-      <div
-        class="lfr-ddm-form-field-checkbox-switch"
-      >
-        <label
-          class="simple-toggle-switch toggle-switch"
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 1
+            </span>
+          </label>
+        </div>
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option2"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option2"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 2
-          </span>
-        </label>
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 2
+            </span>
+          </label>
+        </div>
       </div>
-    </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -602,62 +622,64 @@ exports[`Field Checkbox Multiple is shown as a switcher 1`] = `
   <div
     class="form-group hide"
   >
-    <div
-      class="lfr-ddm-checkbox-multiple"
-    >
+    <fieldset>
       <div
-        class="lfr-ddm-form-field-checkbox-switch"
+        class="lfr-ddm-checkbox-multiple"
       >
-        <label
-          class="simple-toggle-switch toggle-switch"
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option1"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option1"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 1
-          </span>
-        </label>
-      </div>
-      <div
-        class="lfr-ddm-form-field-checkbox-switch"
-      >
-        <label
-          class="simple-toggle-switch toggle-switch"
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 1
+            </span>
+          </label>
+        </div>
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option2"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option2"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 2
-          </span>
-        </label>
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 2
+            </span>
+          </label>
+        </div>
       </div>
-    </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -667,50 +689,52 @@ exports[`Field Checkbox Multiple is shown as checkbox 1`] = `
   <div
     class="form-group hide"
   >
-    <div
-      class="lfr-ddm-checkbox-multiple"
-    >
+    <fieldset>
       <div
-        class="custom-control custom-checkbox"
+        class="lfr-ddm-checkbox-multiple"
       >
-        <label>
-          <input
-            class="custom-control-input"
-            type="checkbox"
-            value="option1"
-          />
-          <span
-            class="custom-control-label"
-          >
+        <div
+          class="custom-control custom-checkbox"
+        >
+          <label>
+            <input
+              class="custom-control-input"
+              type="checkbox"
+              value="option1"
+            />
             <span
-              class="custom-control-label-text"
+              class="custom-control-label"
             >
-              Option 1
+              <span
+                class="custom-control-label-text"
+              >
+                Option 1
+              </span>
             </span>
-          </span>
-        </label>
-      </div>
-      <div
-        class="custom-control custom-checkbox"
-      >
-        <label>
-          <input
-            class="custom-control-input"
-            type="checkbox"
-            value="option2"
-          />
-          <span
-            class="custom-control-label"
-          >
+          </label>
+        </div>
+        <div
+          class="custom-control custom-checkbox"
+        >
+          <label>
+            <input
+              class="custom-control-input"
+              type="checkbox"
+              value="option2"
+            />
             <span
-              class="custom-control-label-text"
+              class="custom-control-label"
             >
-              Option 2
+              <span
+                class="custom-control-label-text"
+              >
+                Option 2
+              </span>
             </span>
-          </span>
-        </label>
+          </label>
+        </div>
       </div>
-    </div>
+    </fieldset>
   </div>
 </div>
 `;
@@ -720,67 +744,71 @@ exports[`Field Checkbox Multiple renders Label if showLabel is true 1`] = `
   <div
     class="form-group hide"
   >
-    <p
-      class="ddm-label"
-    >
-      text
-    </p>
-    <div
-      class="lfr-ddm-checkbox-multiple"
-    >
-      <div
-        class="lfr-ddm-form-field-checkbox-switch"
-      >
-        <label
-          class="simple-toggle-switch toggle-switch"
+    <fieldset>
+      <legend>
+        <p
+          class="ddm-label"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option1"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
-          >
-            <span
-              class="toggle-switch-handle"
-            />
-          </span>
-          <span
-            class="toggle-switch-label"
-          >
-            Option 1
-          </span>
-        </label>
-      </div>
+          text
+        </p>
+      </legend>
       <div
-        class="lfr-ddm-form-field-checkbox-switch"
+        class="lfr-ddm-checkbox-multiple"
       >
-        <label
-          class="simple-toggle-switch toggle-switch"
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
         >
-          <input
-            class="toggle-switch-check"
-            type="checkbox"
-            value="option2"
-          />
-          <span
-            aria-hidden="true"
-            class="toggle-switch-bar"
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            <span
-              class="toggle-switch-handle"
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option1"
             />
-          </span>
-          <span
-            class="toggle-switch-label"
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 1
+            </span>
+          </label>
+        </div>
+        <div
+          class="lfr-ddm-form-field-checkbox-switch"
+        >
+          <label
+            class="simple-toggle-switch toggle-switch"
           >
-            Option 2
-          </span>
-        </label>
+            <input
+              class="toggle-switch-check"
+              type="checkbox"
+              value="option2"
+            />
+            <span
+              aria-hidden="true"
+              class="toggle-switch-bar"
+            >
+              <span
+                class="toggle-switch-handle"
+              />
+            </span>
+            <span
+              class="toggle-switch-label"
+            >
+              Option 2
+            </span>
+          </label>
+        </div>
       </div>
-    </div>
+    </fieldset>
   </div>
 </div>
 `;

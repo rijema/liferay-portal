@@ -6,13 +6,15 @@ exports[`Field Numeric has a helptext 1`] = `
     class="form-group hide"
     data-field-name="numericField"
   >
-    <input
-      aria-label="numeric"
-      class="form-control"
-      name="numericField"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <input
+        aria-label="numeric"
+        class="form-control"
+        name="numericField"
+        type="text"
+        value=""
+      />
+    </fieldset>
     <span
       class="form-text"
     >
@@ -28,13 +30,15 @@ exports[`Field Numeric has a key 1`] = `
     class="form-group hide"
     data-field-name="numericField"
   >
-    <input
-      aria-label="numeric"
-      class="form-control"
-      name="numericField"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <input
+        aria-label="numeric"
+        class="form-control"
+        name="numericField"
+        type="text"
+        value=""
+      />
+    </fieldset>
   </div>
 </div>
 `;
@@ -45,18 +49,22 @@ exports[`Field Numeric has a label 1`] = `
     class="form-group hide"
     data-field-name="numericField"
   >
-    <p
-      class="ddm-label"
-    >
-      label
-    </p>
-    <input
-      aria-label="numeric"
-      class="form-control"
-      name="numericField"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <legend>
+        <p
+          class="ddm-label"
+        >
+          label
+        </p>
+      </legend>
+      <input
+        aria-label="numeric"
+        class="form-control"
+        name="numericField"
+        type="text"
+        value=""
+      />
+    </fieldset>
   </div>
 </div>
 `;
@@ -67,14 +75,16 @@ exports[`Field Numeric has a placeholder 1`] = `
     class="form-group hide"
     data-field-name="numericField"
   >
-    <input
-      aria-label="numeric"
-      class="form-control"
-      name="numericField"
-      placeholder="Placeholder"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <input
+        aria-label="numeric"
+        class="form-control"
+        name="numericField"
+        placeholder="Placeholder"
+        type="text"
+        value=""
+      />
+    </fieldset>
   </div>
 </div>
 `;
@@ -85,13 +95,15 @@ exports[`Field Numeric has a value 1`] = `
     class="form-group hide"
     data-field-name="numericField"
   >
-    <input
-      aria-label="numeric"
-      class="form-control"
-      name="numericField"
-      type="text"
-      value="123"
-    />
+    <fieldset>
+      <input
+        aria-label="numeric"
+        class="form-control"
+        name="numericField"
+        type="text"
+        value="123"
+      />
+    </fieldset>
   </div>
 </div>
 `;
@@ -102,14 +114,16 @@ exports[`Field Numeric has an id 1`] = `
     class="form-group hide"
     data-field-name="numericField"
   >
-    <input
-      aria-label="numeric"
-      class="form-control"
-      id="ID"
-      name="numericField"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <input
+        aria-label="numeric"
+        class="form-control"
+        id="ID"
+        name="numericField"
+        type="text"
+        value=""
+      />
+    </fieldset>
   </div>
 </div>
 `;
@@ -120,13 +134,15 @@ exports[`Field Numeric is not readOnly 1`] = `
     class="form-group hide"
     data-field-name="numericField"
   >
-    <input
-      aria-label="numeric"
-      class="form-control"
-      name="numericField"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <input
+        aria-label="numeric"
+        class="form-control"
+        name="numericField"
+        type="text"
+        value=""
+      />
+    </fieldset>
   </div>
 </div>
 `;
@@ -137,13 +153,15 @@ exports[`Field Numeric is not required 1`] = `
     class="form-group hide"
     data-field-name="numericField"
   >
-    <input
-      aria-label="numeric"
-      class="form-control"
-      name="numericField"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <input
+        aria-label="numeric"
+        class="form-control"
+        name="numericField"
+        type="text"
+        value=""
+      />
+    </fieldset>
   </div>
 </div>
 `;
@@ -154,18 +172,22 @@ exports[`Field Numeric renders Label if showLabel is true 1`] = `
     class="form-group hide"
     data-field-name="numericField"
   >
-    <p
-      class="ddm-label"
-    >
-      Numeric Field
-    </p>
-    <input
-      aria-label="numeric"
-      class="form-control"
-      name="numericField"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <legend>
+        <p
+          class="ddm-label"
+        >
+          Numeric Field
+        </p>
+      </legend>
+      <input
+        aria-label="numeric"
+        class="form-control"
+        name="numericField"
+        type="text"
+        value=""
+      />
+    </fieldset>
   </div>
 </div>
 `;
@@ -176,13 +198,15 @@ exports[`Field Numeric renders the default markup 1`] = `
     class="form-group hide"
     data-field-name="numericField"
   >
-    <input
-      aria-label="numeric"
-      class="form-control"
-      name="numericField"
-      type="text"
-      value=""
-    />
+    <fieldset>
+      <input
+        aria-label="numeric"
+        class="form-control"
+        name="numericField"
+        type="text"
+        value=""
+      />
+    </fieldset>
   </div>
 </div>
 `;
