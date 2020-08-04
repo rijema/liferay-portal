@@ -151,7 +151,7 @@ definition {
 
 		FormFields.selectAutoCompleteOption(autocompleteOption = "Brazil");
 
-		FormPortlet.submitSuccessfully();
+		FormPortlet.submit();
 
 		Navigator.openURL();
 

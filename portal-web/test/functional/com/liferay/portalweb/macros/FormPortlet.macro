@@ -59,10 +59,14 @@ definition {
 		FormPortlet.clickSubmit();
 	}
 
-	macro submitLocalizedSuccessfully {
+	macro submitLocalized {
 		AssertClick(
 			locator1 = "Button#MAIN_CONTENT_SUBMIT",
 			value1 = "${buttonName}");
+	}
+
+	macro submitLocalizedSuccessfully {
+		FormPortlet.submitLocalized();
 
 		WaitForElementPresent(locator1 = "Message#SUCCESS_DISMISSIBLE");
 
