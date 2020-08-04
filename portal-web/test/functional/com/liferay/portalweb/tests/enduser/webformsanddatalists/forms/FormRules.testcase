@@ -1291,7 +1291,7 @@ definition {
 
 		FormFields.viewRequiredAsteriskNotPresent();
 
-		FormPortlet.submitSuccessfully();
+		FormPortlet.submit();
 	}
 
 	@description = "This is a use case for LPS-73332."

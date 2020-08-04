@@ -701,7 +701,7 @@ definition {
 			fieldName = "${fieldTextField}",
 			fieldValue = "Text Field Value");
 
-		FormPortlet.submitLocalizedSuccessfully(buttonName = "Enviar");
+		FormPortlet.submitLocalized(buttonName = "Enviar");
 
 		Navigator.openURL();
 
@@ -1449,7 +1449,7 @@ definition {
 			fieldName = "Select",
 			selectOption = "Select 2");
 
-		FormPortlet.submitSuccessfully();
+		FormPortlet.submit();
 
 		Navigator.openURL();
 
@@ -3871,7 +3871,7 @@ definition {
 
 		FormPortlet.waitForValidationErrorNotPresent();
 
-		FormPortlet.submitSuccessfully();
+		FormPortlet.submit();
 
 		Navigator.openURL();
 
@@ -4475,7 +4475,7 @@ definition {
 			navTab = "Documents and Media",
 			uploadFileName = "Document_1.jpg");
 
-		FormPortlet.submitSuccessfully();
+		FormPortlet.submit();
 
 		Navigator.openURL();
 
