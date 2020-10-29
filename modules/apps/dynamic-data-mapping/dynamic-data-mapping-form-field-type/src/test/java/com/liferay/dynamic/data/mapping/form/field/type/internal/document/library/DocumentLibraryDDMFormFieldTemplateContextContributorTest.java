@@ -20,10 +20,12 @@ import com.liferay.dynamic.data.mapping.model.DDMFormField;
 import com.liferay.dynamic.data.mapping.render.DDMFormFieldRenderingContext;
 import com.liferay.portal.json.JSONFactoryImpl;
 import com.liferay.portal.kernel.json.JSONFactory;
+import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.repository.model.FileEntry;
 import com.liferay.portal.kernel.theme.ThemeDisplay;
 import com.liferay.portal.kernel.util.Html;
 import com.liferay.portal.kernel.util.WebKeys;
+import com.liferay.portal.model.impl.UserImpl;
 import com.liferay.portal.util.HtmlImpl;
 
 import java.util.Locale;
@@ -161,6 +163,22 @@ public class DocumentLibraryDDMFormFieldTemplateContextContributorTest
 		stubber.when(
 			spy
 		).getItemSelectorAuthToken(
+			Matchers.any(HttpServletRequest.class)
+		);
+
+		ThemeDisplay themeDisplay = new ThemeDisplay();
+
+		User user = new UserImpl();
+
+		user.setDefaultUser(true);
+
+		themeDisplay.setUser(user);
+
+		stubber = PowerMockito.doReturn(themeDisplay);
+
+		stubber.when(
+			spy
+		).getThemeDisplay(
 			Matchers.any(HttpServletRequest.class)
 		);
 
