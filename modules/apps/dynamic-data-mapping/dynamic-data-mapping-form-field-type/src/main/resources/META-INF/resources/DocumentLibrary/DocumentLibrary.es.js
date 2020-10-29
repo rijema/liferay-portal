@@ -27,6 +27,7 @@ import React, {useMemo, useState} from 'react';
 import {FieldBase} from '../FieldBase/ReactFieldBase.es';
 
 function getDocumentLibrarySelectorURL({
+	folderId,
 	groupId,
 	itemSelectorAuthToken,
 	portletNamespace,
@@ -49,6 +50,7 @@ function getDocumentLibrarySelectorURL({
 		criteria:
 			'com.liferay.item.selector.criteria.file.criterion.FileItemSelectorCriterion',
 		doAsGroupId: groupId,
+		folderId,
 		itemSelectedEventName: `${portletNamespace}selectDocumentLibrary`,
 		p_p_auth: itemSelectorAuthToken,
 		p_p_id: Liferay.PortletKeys.ITEM_SELECTOR,
@@ -205,6 +207,7 @@ const Main = ({
 	errorMessage,
 	fileEntryTitle,
 	fileEntryURL,
+	folderId,
 	groupId,
 	id,
 	itemSelectorAuthToken,
@@ -265,6 +268,7 @@ const Main = ({
 			singleSelect: true,
 			url: getDocumentLibrarySelectorURL({
 				groupId,
+				folderId,
 				itemSelectorAuthToken,
 				portletNamespace,
 			}),

@@ -27,8 +27,12 @@ import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.language.LanguageUtil;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.repository.model.FileEntry;
+import com.liferay.portal.kernel.repository.model.Folder;
 import com.liferay.portal.kernel.security.auth.AuthTokenUtil;
+import com.liferay.portal.kernel.service.ServiceContext;
+import com.liferay.portal.kernel.service.ServiceContextFactory;
 import com.liferay.portal.kernel.theme.ThemeDisplay;
 import com.liferay.portal.kernel.util.AggregateResourceBundle;
 import com.liferay.portal.kernel.util.Html;
@@ -85,6 +89,28 @@ public class DocumentLibraryDDMFormFieldTemplateContextContributor
 					getFileEntryURL(httpServletRequest, fileEntry));
 			}
 		}
+
+		long folderId = 0;
+
+		ThemeDisplay themeDisplay = getThemeDisplay(httpServletRequest);
+
+		User user = themeDisplay.getUser();
+
+		if (!user.isDefaultUser()) {
+			try {
+				folderId = _getFolderId(httpServletRequest);
+			}
+			catch (PortalException portalException) {
+				if (_log.isDebugEnabled()) {
+					_log.debug(
+						"Unable to retrieve private uploads folder of user " +
+							themeDisplay.getUserId(),
+						portalException);
+				}
+			}
+		}
+
+		parameters.put("folderId", folderId);
 
 		parameters.put(
 			"groupId", ddmFormFieldRenderingContext.getProperty("groupId"));
@@ -241,6 +267,13 @@ public class DocumentLibraryDDMFormFieldTemplateContextContributor
 			moduleResourceBundle, portalResourceBundle);
 	}
 
+	protected ThemeDisplay getThemeDisplay(
+		HttpServletRequest httpServletRequest) {
+
+		return (ThemeDisplay)httpServletRequest.getAttribute(
+			WebKeys.THEME_DISPLAY);
+	}
+
 	protected JSONObject getValueJSONObject(String value) {
 		try {
 			return jsonFactory.createJSONObject(value);
@@ -265,6 +298,44 @@ public class DocumentLibraryDDMFormFieldTemplateContextContributor
 
 	@Reference
 	protected Portal portal;
+
+	private long _getFolderId(HttpServletRequest httpServletRequest)
+		throws PortalException {
+
+		Folder folder;
+
+		ThemeDisplay themeDisplay = getThemeDisplay(httpServletRequest);
+
+		User user = themeDisplay.getUser();
+
+		try {
+			folder = dlAppService.getFolder(
+				themeDisplay.getScopeGroupId(), 0,
+				String.valueOf(user.getUserId()));
+		}
+		catch (PortalException portalException) {
+			if (_log.isDebugEnabled()) {
+				_log.debug(
+					"The user " + user.getUserId() +
+						" does not have a private uploads folder",
+					portalException);
+			}
+
+			ServiceContext serviceContext = ServiceContextFactory.getInstance(
+				httpServletRequest);
+
+			folder = dlAppService.addFolder(
+				themeDisplay.getScopeGroupId(), 0,
+				String.valueOf(user.getUserId()),
+				LanguageUtil.get(
+					getResourceBundle(user.getLocale()),
+					"this-folder-was-automatically-created-by-forms-to-store-" +
+						"all-your-uploaded-files"),
+				serviceContext);
+		}
+
+		return folder.getFolderId();
+	}
 
 	private static final Log _log = LogFactoryUtil.getLog(
 		DocumentLibraryDDMFormFieldTemplateContextContributor.class);
