@@ -403,7 +403,7 @@ const Main = ({
 				placeholder={placeholder}
 				shouldUpdateValue={shouldUpdateValue}
 				syncDelay={syncDelay}
-				value={value ? value : predefinedValue}
+				value={value ? value : value == '' ? '' : predefinedValue}
 			/>
 		</FieldBase>
 	);
