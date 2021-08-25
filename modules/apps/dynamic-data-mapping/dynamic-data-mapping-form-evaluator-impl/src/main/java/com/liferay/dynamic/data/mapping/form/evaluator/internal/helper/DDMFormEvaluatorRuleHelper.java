@@ -54,37 +54,36 @@ public class DDMFormEvaluatorRuleHelper {
 	protected void checkFieldAffectedByAction(
 		DDMFormRule ddmFormRule, DDMFormField ddmFormField) {
 
+		checkFieldAffectedByCalculateAction(ddmFormRule, ddmFormField);
 		checkFieldAffectedBySetReadOnlyAction(ddmFormRule, ddmFormField);
 		checkFieldAffectedBySetRequiredAction(ddmFormRule, ddmFormField);
 		checkFieldAffectedBySetVisibleAction(ddmFormRule, ddmFormField);
-		checkFieldAffectedByCalculateAction(ddmFormRule, ddmFormField);
 	}
 
 	protected void checkFieldAffectedByCalculateAction(
 		DDMFormRule ddmFormRule, DDMFormField ddmFormField) {
 
-		Map<String, Object> properties = ddmFormField.getProperties();
+		String currentValue = GetterUtil.getString(
+			ddmFormField.getProperty("value"));
 
 		if (containsAction(
 				ddmFormRule, "calculate", ddmFormField.getName(),
-				GetterUtil.getString(properties.get("value")))) {
+				currentValue)) {
 
-			String value = StringPool.BLANK;
-			LocalizedValue predefinedValue = (LocalizedValue)properties.get(
-				"predefinedValue");
+			String newValue = StringPool.BLANK;
 
-			Locale locale = new Locale(
-				(String)ddmFormField.getProperty("locale"));
+			LocalizedValue predefinedValue = ddmFormField.getPredefinedValue();
 
-			if ((predefinedValue != null) &&
-				(predefinedValue.getString(locale) != null)) {
-
-				value = predefinedValue.getString(locale);
+			if (predefinedValue != null) {
+				newValue = GetterUtil.getString(
+					predefinedValue.getString(
+						new Locale(
+							(String)ddmFormField.getProperty("locale"))));
 			}
 
 			UpdateFieldPropertyRequest.Builder builder =
 				UpdateFieldPropertyRequest.Builder.newBuilder(
-					ddmFormField.getName(), "value", value);
+					ddmFormField.getName(), "value", newValue);
 
 			_ddmFormEvaluatorExpressionObserver.updateFieldProperty(
 				builder.build());
