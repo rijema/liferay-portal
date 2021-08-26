@@ -104,7 +104,6 @@ export const mergePages = (
 
 			if (newField.localizable) {
 				if (
-					field.type &&
 					field.type === 'numeric' &&
 					field.valueChanged &&
 					field.value != field.localizedValue[editingLanguageId]
