@@ -36,11 +36,13 @@ public class DDMFormEvaluatorRuleHelper {
 
 	public DDMFormEvaluatorRuleHelper(
 		Map<String, DDMFormField> ddmFormFieldsMap,
-		DDMFormEvaluatorExpressionObserver ddmFormEvaluatorExpressionObserver) {
+		DDMFormEvaluatorExpressionObserver ddmFormEvaluatorExpressionObserver,
+		DDMFormEvaluatorHelper ddmFormEvaluatorHelper) {
 
 		_ddmFormFieldsMap = ddmFormFieldsMap;
 		_ddmFormEvaluatorExpressionObserver =
 			ddmFormEvaluatorExpressionObserver;
+		_ddmFormEvaluatorHelper = ddmFormEvaluatorHelper;
 	}
 
 	public void checkFieldAffectedByAction(DDMFormRule ddmFormRule) {
@@ -64,6 +66,9 @@ public class DDMFormEvaluatorRuleHelper {
 		DDMFormRule ddmFormRule, DDMFormField ddmFormField) {
 
 		if (containsAction(
+				ddmFormRule, "calculate", ddmFormField.getName(),
+				GetterUtil.getString(ddmFormField.getProperty("value"))) ||
+			containsCalculatedAction(
 				ddmFormRule, "calculate", ddmFormField.getName(),
 				GetterUtil.getString(ddmFormField.getProperty("value")))) {
 
@@ -151,8 +156,32 @@ public class DDMFormEvaluatorRuleHelper {
 			action -> Objects.equals(setPropertyAction, action));
 	}
 
+	protected boolean containsCalculatedAction(
+		DDMFormRule ddmFormRule, String functionName, String ddmFormFieldName,
+		Object defaultValue) {
+
+		List<String> actions = ddmFormRule.getActions();
+
+		for (String action : actions) {
+			if (action.contains("calculate") &&
+				functionName.contains("calculate") &&
+				ddmFormFieldName.contains("Numeric")) {
+
+				String fieldResult = _ddmFormEvaluatorHelper.calculateAction(
+					ddmFormRule, ddmFormFieldName);
+
+				if (fieldResult.equals(defaultValue)) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
 	private final DDMFormEvaluatorExpressionObserver
 		_ddmFormEvaluatorExpressionObserver;
+	private final DDMFormEvaluatorHelper _ddmFormEvaluatorHelper;
 	private final Map<String, DDMFormField> _ddmFormFieldsMap;
 
 }

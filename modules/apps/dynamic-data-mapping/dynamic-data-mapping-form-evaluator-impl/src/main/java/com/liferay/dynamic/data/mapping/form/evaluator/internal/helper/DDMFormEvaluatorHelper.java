@@ -108,7 +108,7 @@ public class DDMFormEvaluatorHelper {
 		_ddmFormLayout = ddmFormEvaluatorEvaluateRequest.getDDMFormLayout();
 
 		_ddmFormEvaluatorRuleHelper = new DDMFormEvaluatorRuleHelper(
-			_ddmFormFieldsMap, ddmFormEvaluatorExpressionObserver);
+			_ddmFormFieldsMap, ddmFormEvaluatorExpressionObserver, this);
 
 		ddmFormEvaluatorDDMExpressionFieldAccessor =
 			new DDMFormEvaluatorExpressionFieldAccessor(
@@ -122,6 +122,8 @@ public class DDMFormEvaluatorHelper {
 		ddmFormEvaluatorExpressionParameterAccessor =
 			new DDMFormEvaluatorExpressionParameterAccessor(
 				_ddmFormEvaluatorEvaluateRequest);
+
+		fieldsAffectedByCalculate = new HashMap<>();
 	}
 
 	public DDMFormEvaluatorEvaluateResponse evaluate() {
@@ -170,6 +172,46 @@ public class DDMFormEvaluatorHelper {
 			getDisabledPagesIndexes());
 
 		return formEvaluatorEvaluateResponse.build();
+	}
+
+	protected String calculateAction(
+		DDMFormRule ddmFormRule, String fieldName) {
+
+		String fieldResult = StringPool.BLANK;
+
+		if (_ddmFormFieldsPropertyChanges.isEmpty()) {
+			List<String> actions = ddmFormRule.getActions();
+
+			Stream<String> stream = actions.stream();
+
+			evaluateDDMFormRuleAction(
+				stream.collect(Collectors.joining(" AND ")));
+
+			_ddmFormFieldsPropertyChanges.forEach(
+				(ddmFormFieldContextKey, ddmFormFieldProperties) -> {
+					Map<String, Object> ddmFormFieldPropertyChanges =
+						_ddmFormFieldsPropertyChanges.get(
+							ddmFormFieldContextKey);
+
+					if (fieldName.contentEquals(
+							ddmFormFieldContextKey.getName())) {
+
+						fieldsAffectedByCalculate.put(
+							ddmFormFieldContextKey.getName(),
+							ddmFormFieldPropertyChanges.get("value"));
+					}
+				});
+			_ddmFormFieldsPropertyChanges.clear();
+		}
+
+		Object isCurrentFieldAffected = fieldsAffectedByCalculate.get(
+			fieldName);
+
+		if (Validator.isNotNull(isCurrentFieldAffected)) {
+			fieldResult = isCurrentFieldAffected.toString();
+		}
+
+		return fieldResult;
 	}
 
 	protected <T> DDMExpression<T> createExpression(String expression)
@@ -837,6 +879,7 @@ public class DDMFormEvaluatorHelper {
 	protected final DDMFormFieldValueAccessor<String>
 		defaultDDMFormFieldValueAccessor =
 			new DefaultDDMFormFieldValueAccessor();
+	protected Map<String, Object> fieldsAffectedByCalculate = new HashMap<>();
 
 	private boolean _filterVisibleFieldsWithInputMask(
 		DDMFormEvaluatorFieldContextKey ddmFormEvaluatorFieldContextKey) {
