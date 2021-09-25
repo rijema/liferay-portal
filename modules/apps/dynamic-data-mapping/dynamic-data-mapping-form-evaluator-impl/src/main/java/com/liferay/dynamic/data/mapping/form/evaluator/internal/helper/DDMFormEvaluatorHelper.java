@@ -142,13 +142,27 @@ public class DDMFormEvaluatorHelper {
 
 		Stream<DDMFormRule> stream = ddmFormRules.stream();
 
+		Stream<DDMFormRule> secondaryStream = ddmFormRules.stream();
+
 		stream.filter(
 			DDMFormRule::isEnabled
 		).forEach(
 			rule -> {
-				evaluateDDMFormRule(rule);
+				if (!evaluateDDMFormRuleCondition(rule.getCondition())) {
+					evaluateDDMFormRule(rule);
+					_resetInvisibleFieldValue();
+				}
+			}
+		);
 
-				_resetInvisibleFieldValue();
+		secondaryStream.filter(
+			DDMFormRule::isEnabled
+		).forEach(
+			rule -> {
+				if (evaluateDDMFormRuleCondition(rule.getCondition())) {
+					evaluateDDMFormRule(rule);
+					_resetInvisibleFieldValue();
+				}
 			}
 		);
 
