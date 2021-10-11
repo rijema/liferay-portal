@@ -82,6 +82,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -301,6 +302,87 @@ public class DDMFormEvaluatorHelperTest extends PowerMockito {
 		Assert.assertNull(ddmFormFieldPropertyChanges.get("valid"));
 		Assert.assertTrue(
 			(boolean)ddmFormFieldPropertyChanges.get("repeatable"));
+	}
+
+	@Test
+	public void testGetSameResponseAfterCalculateDDMFormRuleEvaluations()
+		throws Exception {
+
+		DDMForm ddmForm = new DDMForm();
+
+		ddmForm.addDDMFormField(
+			createDDMFormField("field0", "text", FieldConstants.STRING));
+		ddmForm.addDDMFormField(
+			createDDMFormField("field1", "numeric", FieldConstants.DOUBLE));
+
+		BigDecimal expectedResponseFirstCalculateDDMFormRule = new BigDecimal(
+			1);
+
+		ddmForm.addDDMFormRule(
+			new DDMFormRule(
+				Arrays.asList(
+					String.format(
+						"calculate(\"field1\", %s)",
+						expectedResponseFirstCalculateDDMFormRule.toString())),
+				"equals(getValue(\"field0\"),\"field0_value\")"));
+
+		BigDecimal expectedResponseSecondCalculateDDMFormRule = new BigDecimal(
+			2);
+
+		ddmForm.addDDMFormRule(
+			new DDMFormRule(
+				Arrays.asList(
+					String.format(
+						"calculate(\"field1\", %s)",
+						expectedResponseSecondCalculateDDMFormRule.toString())),
+				"equals(getValue(\"field0\"),\"field0_value2\")"));
+
+		DDMFormValues ddmFormValues = DDMFormValuesTestUtil.createDDMFormValues(
+			ddmForm);
+
+		ddmFormValues.addDDMFormFieldValue(
+			DDMFormValuesTestUtil.createDDMFormFieldValue(
+				"field0_instanceId", "field0",
+				new UnlocalizedValue("field0_value")));
+		ddmFormValues.addDDMFormFieldValue(
+			DDMFormValuesTestUtil.createDDMFormFieldValue(
+				"field1_instanceId", "field1", new UnlocalizedValue("")));
+
+		Map<DDMFormEvaluatorFieldContextKey, Map<String, Object>>
+			ddmFormFieldsPropertyChanges = new HashMap<>();
+
+		Map<String, Object> ddmFormFieldPropertyChanges = new HashMap<>();
+
+		Object ddmFormFieldEvaluated = ddmFormEvaluateChangedProperty(
+			evaluate(ddmForm, ddmFormValues), ddmFormFieldsPropertyChanges,
+			ddmFormFieldPropertyChanges, "field1", "field1_instanceId");
+
+		Assert.assertEquals(
+			expectedResponseFirstCalculateDDMFormRule, ddmFormFieldEvaluated);
+
+		ddmFormValues.addDDMFormFieldValue(
+			DDMFormValuesTestUtil.createDDMFormFieldValue(
+				"field0_instanceId", "field0",
+				new UnlocalizedValue("field0_value2")));
+
+		ddmFormFieldEvaluated = ddmFormEvaluateChangedProperty(
+			evaluate(ddmForm, ddmFormValues), ddmFormFieldsPropertyChanges,
+			ddmFormFieldPropertyChanges, "field1", "field1_instanceId");
+
+		Assert.assertEquals(
+			expectedResponseSecondCalculateDDMFormRule, ddmFormFieldEvaluated);
+
+		ddmFormValues.addDDMFormFieldValue(
+			DDMFormValuesTestUtil.createDDMFormFieldValue(
+				"field0_instanceId", "field0",
+				new UnlocalizedValue("field0_value")));
+
+		ddmFormFieldEvaluated = ddmFormEvaluateChangedProperty(
+			evaluate(ddmForm, ddmFormValues), ddmFormFieldsPropertyChanges,
+			ddmFormFieldPropertyChanges, "field1", "field1_instanceId");
+
+		Assert.assertEquals(
+			expectedResponseFirstCalculateDDMFormRule, ddmFormFieldEvaluated);
 	}
 
 	@Test
@@ -1792,6 +1874,24 @@ public class DDMFormEvaluatorHelperTest extends PowerMockito {
 		ddmFormField.setRequired(true);
 
 		return ddmFormField;
+	}
+
+	protected Object ddmFormEvaluateChangedProperty(
+			DDMFormEvaluatorEvaluateResponse ddmFormEvaluatorEvaluateResponse,
+			Map<DDMFormEvaluatorFieldContextKey, Map<String, Object>>
+				ddmFormFieldsPropertyChanges,
+			Map<String, Object> ddmFormFieldPropertyChanges,
+			String ddmFormFieldName, String ddmFormFieldInstanceId)
+		throws Exception {
+
+		ddmFormFieldsPropertyChanges =
+			ddmFormEvaluatorEvaluateResponse.getDDMFormFieldsPropertyChanges();
+
+		ddmFormFieldPropertyChanges = ddmFormFieldsPropertyChanges.get(
+			new DDMFormEvaluatorFieldContextKey(
+				ddmFormFieldName, ddmFormFieldInstanceId));
+
+		return ddmFormFieldPropertyChanges.get("value");
 	}
 
 	protected DDMFormEvaluatorEvaluateResponse evaluate(
