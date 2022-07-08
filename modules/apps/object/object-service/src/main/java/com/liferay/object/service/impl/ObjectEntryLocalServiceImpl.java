@@ -1070,10 +1070,6 @@ public class ObjectEntryLocalServiceImpl
 				}
 			}
 
-			if (Objects.equals("documentsAndMedia", fileSource)) {
-				return;
-			}
-
 			DLFolder dlFileEntryFolder = dlFileEntry.getFolder();
 
 			DLFolder dlFolder = _getDLFolder(
