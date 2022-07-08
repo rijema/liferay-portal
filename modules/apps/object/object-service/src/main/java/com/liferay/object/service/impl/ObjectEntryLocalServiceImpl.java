@@ -77,6 +77,7 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.json.JSONArray;
 import com.liferay.portal.kernel.json.JSONException;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
+import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.model.BaseModel;
@@ -2337,8 +2338,11 @@ public class ObjectEntryLocalServiceImpl
 					objectField.getBusinessType(),
 					ObjectFieldConstants.BUSINESS_TYPE_ATTACHMENT)) {
 
+			JSONObject entryJsonObject = JSONFactoryUtil.createJSONObject(entry.getValue().toString());
+			Long fileEntryId = GetterUtil.getLong(entryJsonObject.get("fileEntryId"));
+
 			DLFileEntry dlFileEntry = _dlFileEntryLocalService.fetchDLFileEntry(
-				GetterUtil.getLong(entry.getValue()));
+					fileEntryId);
 
 			if (dlFileEntry != null) {
 				_validateFileExtension(
