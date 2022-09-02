@@ -149,6 +149,14 @@ public class AddFormInstanceRecordMVCActionCommand
 		String redirectURL = ParamUtil.getString(
 			actionRequest, "redirect", ddmFormInstanceSettings.redirectURL());
 
+		DDMFormSuccessPageSettings ddmFormSuccessPageSettings =
+			ddmForm.getDDMFormSuccessPageSettings();
+
+		if (Validator.isNotNull(redirectURL) ||
+			ddmFormSuccessPageSettings.isEnabled()) {
+			hideDefaultSuccessMessage(actionRequest);
+		}
+
 		if (Validator.isNotNull(redirectURL)) {
 			portletSession.setAttribute(
 				DDMFormWebKeys.DYNAMIC_DATA_MAPPING_FORM_INSTANCE_ID,
@@ -156,14 +164,6 @@ public class AddFormInstanceRecordMVCActionCommand
 			portletSession.setAttribute(DDMFormWebKeys.GROUP_ID, groupId);
 
 			sendRedirect(actionRequest, actionResponse, redirectURL);
-		}
-		else {
-			DDMFormSuccessPageSettings ddmFormSuccessPageSettings =
-				ddmForm.getDDMFormSuccessPageSettings();
-
-			if (ddmFormSuccessPageSettings.isEnabled()) {
-				hideDefaultSuccessMessage(actionRequest);
-			}
 		}
 	}
 
