@@ -209,6 +209,8 @@ public class DEDataDefinitionFieldLinkStagedModelDataHandler
 					portletDataContext, importedDEDataDefinitionFieldLink);
 		}
 		else {
+			importedDEDataDefinitionFieldLink.setClassPK(
+				existingDEDataDefinitionFieldLink.getClassPK());
 			importedDEDataDefinitionFieldLink.setMvccVersion(
 				existingDEDataDefinitionFieldLink.getMvccVersion());
 			importedDEDataDefinitionFieldLink.setDeDataDefinitionFieldLinkId(
