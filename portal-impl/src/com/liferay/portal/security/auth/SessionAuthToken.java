@@ -115,7 +115,7 @@ public class SessionAuthToken implements AuthToken {
 			HttpServletRequest httpServletRequest, String origin)
 		throws PrincipalException {
 
-		if (!PropsValues.AUTH_TOKEN_CHECK_ENABLED) {
+		if (!PropsValues.AUTH_TOKEN_CHECK_ENABLED || !PropsValues.JAVASCRIPT_SINGLE_PAGE_APPLICATION_ENABLED) {
 			return;
 		}
 
