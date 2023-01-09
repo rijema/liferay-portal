@@ -54,6 +54,7 @@ import com.liferay.portal.kernel.util.ResourceBundleUtil;
 import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.kernel.workflow.WorkflowConstants;
+import com.liferay.portal.util.PropsValues;
 
 import java.net.InetAddress;
 import java.net.URI;
@@ -114,9 +115,11 @@ public class SaveFormInstanceMVCCommandHelper {
 			boolean validateDDMFormFieldSettings)
 		throws Exception {
 
-		AuthTokenUtil.checkCSRFToken(
-			_portal.getHttpServletRequest(portletRequest),
-			SaveFormInstanceMVCCommandHelper.class.getName());
+		if (PropsValues.JAVASCRIPT_SINGLE_PAGE_APPLICATION_ENABLED) {
+			AuthTokenUtil.checkCSRFToken(
+				_portal.getHttpServletRequest(portletRequest),
+				SaveFormInstanceMVCCommandHelper.class.getName());
+		}
 
 		long formInstanceId = ParamUtil.getLong(
 			portletRequest, "formInstanceId");
