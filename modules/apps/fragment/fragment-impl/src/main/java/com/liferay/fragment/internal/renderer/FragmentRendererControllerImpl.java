@@ -118,7 +118,10 @@ public class FragmentRendererControllerImpl
 						exception.getMessage(), ", ", throwable.getMessage()),
 					exception);
 			}
-			else {
+			else if (!fragmentEntryLink.isNew() &&
+					 Validator.isNotNull(
+						 fragmentEntryLink.getLastPropagationDate())) {
+
 				_log.error(
 					StringBundler.concat(
 						"Unable to render content of fragment entry ",
