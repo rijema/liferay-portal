@@ -19,6 +19,8 @@ public class DefaultStyleBookEntryUtil {
 	public static StyleBookEntry getDefaultMasterStyleBookEntry(Layout layout) {
 		StyleBookEntry styleBookEntry = null;
 
+		String test = "TestSSH";
+
 		if (layout.getMasterLayoutPlid() > 0) {
 			Layout masterLayout = LayoutLocalServiceUtil.fetchLayout(
 				layout.getMasterLayoutPlid());
