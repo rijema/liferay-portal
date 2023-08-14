@@ -20,6 +20,7 @@ public class DefaultStyleBookEntryUtil {
 		StyleBookEntry styleBookEntry = null;
 
 		String test = "TestSSH";
+		String testDois = "TestSSH";
 
 		if (layout.getMasterLayoutPlid() > 0) {
 			Layout masterLayout = LayoutLocalServiceUtil.fetchLayout(
