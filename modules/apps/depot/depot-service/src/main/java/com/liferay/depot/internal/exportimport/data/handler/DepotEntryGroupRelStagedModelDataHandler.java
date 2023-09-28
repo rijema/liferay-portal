@@ -5,6 +5,7 @@
 
 package com.liferay.depot.internal.exportimport.data.handler;
 
+import com.liferay.depot.exception.NoSuchEntryException;
 import com.liferay.depot.model.DepotEntry;
 import com.liferay.depot.model.DepotEntryGroupRel;
 import com.liferay.depot.service.DepotEntryGroupRelLocalService;
@@ -14,8 +15,10 @@ import com.liferay.exportimport.kernel.lar.ExportImportPathUtil;
 import com.liferay.exportimport.kernel.lar.PortletDataContext;
 import com.liferay.exportimport.kernel.lar.StagedModelDataHandler;
 import com.liferay.exportimport.staged.model.repository.StagedModelRepository;
+import com.liferay.petra.string.StringPool;
 import com.liferay.portal.kernel.model.Group;
 import com.liferay.portal.kernel.model.GroupConstants;
+import com.liferay.portal.kernel.service.GroupLocalService;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.xml.Element;
 
@@ -50,6 +53,9 @@ public class DepotEntryGroupRelStagedModelDataHandler
 		exportDataElement.addAttribute(
 			"depot-entry-live-group-id",
 			String.valueOf(_getDepotEntryLiveGroupId(depotEntryGroupRel)));
+		exportDataElement.addAttribute(
+			"depot-entry-live-group-key",
+			_getDepotEntryLiveGroupKey(depotEntryGroupRel));
 
 		portletDataContext.addClassedModel(
 			exportDataElement,
@@ -82,10 +88,31 @@ public class DepotEntryGroupRelStagedModelDataHandler
 			Element importDataElement = portletDataContext.getImportDataElement(
 				importedDepotEntryGroupRel);
 
-			DepotEntry depotEntry = _depotEntryLocalService.getGroupDepotEntry(
-				GetterUtil.getLong(
+			DepotEntry depotEntry =
+				_depotEntryLocalService.fetchGroupDepotEntry(
+					GetterUtil.getLong(
+						importDataElement.attributeValue(
+							"depot-entry-live-group-id")));
+
+			if (depotEntry == null) {
+				String groupKey = GetterUtil.getString(
 					importDataElement.attributeValue(
-						"depot-entry-live-group-id")));
+						"depot-entry-live-group-key"));
+
+				Group group = _groupLocalService.fetchGroup(
+					portletDataContext.getCompanyId(), groupKey);
+
+				if (group == null) {
+					throw new NoSuchEntryException();
+				}
+
+				depotEntry = _depotEntryLocalService.fetchGroupDepotEntry(
+					group.getGroupId());
+
+				if (depotEntry == null) {
+					throw new NoSuchEntryException();
+				}
+			}
 
 			importedDepotEntryGroupRel.setDepotEntryId(
 				depotEntry.getDepotEntryId());
@@ -143,11 +170,42 @@ public class DepotEntryGroupRelStagedModelDataHandler
 		return liveGroupId;
 	}
 
+	private String _getDepotEntryLiveGroupKey(
+			DepotEntryGroupRel depotEntryGroupRel)
+		throws Exception {
+
+		DepotEntry depotEntry = _depotEntryLocalService.getDepotEntry(
+			depotEntryGroupRel.getDepotEntryId());
+
+		Group group = depotEntry.getGroup();
+
+		Group stagingGroup = group.getStagingGroup();
+
+		if (stagingGroup != null) {
+			return stagingGroup.getGroupKey();
+		}
+
+		if (group.isStagedRemotely()) {
+			return String.valueOf(group.getRemoteLiveGroupId());
+		}
+
+		long liveGroupId = group.getLiveGroupId();
+
+		if (liveGroupId == GroupConstants.DEFAULT_LIVE_GROUP_ID) {
+			return group.getGroupKey();
+		}
+
+		return StringPool.BLANK;
+	}
+
 	@Reference
 	private DepotEntryGroupRelLocalService _depotEntryGroupRelLocalService;
 
 	@Reference
 	private DepotEntryLocalService _depotEntryLocalService;
+
+	@Reference
+	private GroupLocalService _groupLocalService;
 
 	@Reference(
 		target = "(model.class.name=com.liferay.depot.model.DepotEntryGroupRel)",
