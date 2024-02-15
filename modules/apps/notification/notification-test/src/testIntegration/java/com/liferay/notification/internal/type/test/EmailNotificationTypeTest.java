@@ -150,13 +150,14 @@ public class EmailNotificationTypeTest extends BaseNotificationTypeTest {
 				).build()),
 			null, "Body", LanguageUtil.getLanguageId(LocaleUtil.US));
 
-		_executeNotificationObjectAction(
+		_executeNotificationObjectActionOnScope(
 			0,
 			_addNotificationTemplate(
 				body, NotificationTemplateConstants.EDITOR_TYPE_FREEMARKER,
 				false,
 				Collections.singletonMap(
-					LocaleUtil.US, user1.getEmailAddress())));
+					LocaleUtil.US, user1.getEmailAddress())),
+			ObjectDefinitionConstants.SCOPE_COMPANY);
 
 		List<NotificationQueueEntry> notificationQueueEntries =
 			notificationQueueEntryLocalService.getNotificationEntries(
@@ -188,13 +189,14 @@ public class EmailNotificationTypeTest extends BaseNotificationTypeTest {
 				).build()),
 			null, "Body", LanguageUtil.getLanguageId(LocaleUtil.US));
 
-		_executeNotificationObjectAction(
+		_executeNotificationObjectActionOnScope(
 			0,
 			_addNotificationTemplate(
 				body, NotificationTemplateConstants.EDITOR_TYPE_FREEMARKER,
 				false,
 				Collections.singletonMap(
-					LocaleUtil.US, user1.getEmailAddress())));
+					LocaleUtil.US, user1.getEmailAddress())),
+			ObjectDefinitionConstants.SCOPE_COMPANY);
 
 		List<NotificationQueueEntry> notificationQueueEntries =
 			notificationQueueEntryLocalService.getNotificationEntries(
@@ -533,12 +535,13 @@ public class EmailNotificationTypeTest extends BaseNotificationTypeTest {
 
 		_verifyNotificationQueue(
 			expectedNotificationQueueEntriesCount, expectedToEmailAddresses,
-			singleRecipient);
+			fileEntry, singleRecipient);
 	}
 
 	private void _verifyNotificationQueue(
 		int expectedNotificationQueueEntriesCount,
-		List<String> expectedToEmailAddresses, boolean singleRecipient) {
+		List<String> expectedToEmailAddresses, FileEntry fileEntry,
+		boolean singleRecipient) throws Exception{
 
 		List<NotificationQueueEntry> notificationQueueEntries = ListUtil.sort(
 			notificationQueueEntryLocalService.getNotificationEntries(
