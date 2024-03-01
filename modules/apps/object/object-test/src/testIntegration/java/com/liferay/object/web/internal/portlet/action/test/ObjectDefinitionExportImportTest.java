@@ -65,6 +65,11 @@ public class ObjectDefinitionExportImportTest extends BaseExportImportTestCase {
 			"test-object-definition.portuguese-locale.json",
 			"test-object-definition.site-default-locale.json",
 			"TESTOBJECTDEFINITIONPORTUGUESE", "TestObjectDefinitionPortuguese");
+
+		testExportImport(
+			"test-object-definition-state-manager.json",
+			"test-object-definition-state-manager.json", null,
+			"Testobjectdefinitionstatemanager");
 	}
 
 	@Override
