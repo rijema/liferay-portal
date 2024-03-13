@@ -56,6 +56,7 @@ import com.liferay.portal.kernel.util.CalendarFactoryUtil;
 import com.liferay.portal.kernel.util.Constants;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.HashMapBuilder;
+import com.liferay.portal.kernel.util.ListUtil;
 import com.liferay.portal.kernel.util.LocaleUtil;
 import com.liferay.portal.kernel.util.PortalUtil;
 import com.liferay.portal.kernel.workflow.WorkflowConstants;
@@ -1138,7 +1139,7 @@ public class JournalTestUtil {
 
 		ddmFormFieldValue.setValue(value);
 
-		if (ddmFormField.getNestedDDMFormFields() != null) {
+		if (ListUtil.isNotEmpty(ddmFormField.getNestedDDMFormFields())) {
 			List<DDMFormFieldValue> nestedDDMFormFieldValues = null;
 
 			for (DDMFormField nestedDDMFormField :
