@@ -62,6 +62,7 @@ import com.liferay.portal.kernel.util.PortalUtil;
 import com.liferay.portal.kernel.workflow.WorkflowConstants;
 import com.liferay.rss.util.RSSUtil;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -1114,6 +1115,24 @@ public class JournalTestUtil {
 		).put(
 			"name", ddmFormField.getName()
 		).put(
+			"nestedDataDefinitionFields",
+			() -> {
+				List<JSONObject> nestedFields = new ArrayList<>();
+
+				if (ListUtil.isNotEmpty(
+						ddmFormField.getNestedDDMFormFields())) {
+
+					for (DDMFormField nestedDDMFormField :
+							ddmFormField.getNestedDDMFormFields()) {
+
+						_getDataDefinitionFieldJSONObject(
+							nestedDDMFormField, languageId);
+					}
+				}
+
+				return nestedFields;
+			}
+		).put(
 			"readOnly", ddmFormField.isReadOnly()
 		).put(
 			"repeatable", ddmFormField.isRepeatable()
@@ -1140,7 +1159,8 @@ public class JournalTestUtil {
 		ddmFormFieldValue.setValue(value);
 
 		if (ListUtil.isNotEmpty(ddmFormField.getNestedDDMFormFields())) {
-			List<DDMFormFieldValue> nestedDDMFormFieldValues = null;
+			List<DDMFormFieldValue> nestedDDMFormFieldValues =
+				new ArrayList<>();
 
 			for (DDMFormField nestedDDMFormField :
 					ddmFormField.getNestedDDMFormFields()) {
