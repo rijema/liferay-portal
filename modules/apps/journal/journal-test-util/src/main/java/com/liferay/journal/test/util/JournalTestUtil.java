@@ -64,6 +64,7 @@ import com.liferay.rss.util.RSSUtil;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -1136,6 +1137,19 @@ public class JournalTestUtil {
 		value.addString(locale, fieldValue);
 
 		ddmFormFieldValue.setValue(value);
+
+		if (ddmFormField.getNestedDDMFormFields() != null) {
+			List<DDMFormFieldValue> nestedDDMFormFieldValues = null;
+
+			for (DDMFormField nestedDDMFormField :
+					ddmFormField.getNestedDDMFormFields()) {
+
+				nestedDDMFormFieldValues.add(
+					_getDDMFormFieldValue(nestedDDMFormField, "", locale));
+			}
+
+			ddmFormFieldValue.setNestedDDMFormFields(nestedDDMFormFieldValues);
+		}
 
 		return ddmFormFieldValue;
 	}
