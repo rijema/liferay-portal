@@ -1116,22 +1116,7 @@ public class JournalTestUtil {
 			"name", ddmFormField.getName()
 		).put(
 			"nestedDataDefinitionFields",
-			() -> {
-				List<JSONObject> nestedFields = new ArrayList<>();
-
-				if (ListUtil.isNotEmpty(
-						ddmFormField.getNestedDDMFormFields())) {
-
-					for (DDMFormField nestedDDMFormField :
-							ddmFormField.getNestedDDMFormFields()) {
-
-						_getDataDefinitionFieldJSONObject(
-							nestedDDMFormField, languageId);
-					}
-				}
-
-				return nestedFields;
-			}
+			_getNestedDataDefinitionFieldsJSONArray(ddmFormField, languageId)
 		).put(
 			"readOnly", ddmFormField.isReadOnly()
 		).put(
@@ -1212,6 +1197,24 @@ public class JournalTestUtil {
 		}
 
 		return valuesMap;
+	}
+
+	private static JSONArray _getNestedDataDefinitionFieldsJSONArray(
+		DDMFormField ddmFormField, String languageId) {
+
+		JSONArray jsonArray = JSONFactoryUtil.createJSONArray();
+
+		if (ListUtil.isNotEmpty(ddmFormField.getNestedDDMFormFields())) {
+			for (DDMFormField nestedDDMFormField :
+					ddmFormField.getNestedDDMFormFields()) {
+
+				jsonArray.put(
+					_getDataDefinitionFieldJSONObject(
+						nestedDDMFormField, languageId));
+			}
+		}
+
+		return jsonArray;
 	}
 
 	private static JSONObject _getOptionsJSONObject(
