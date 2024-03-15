@@ -1475,6 +1475,13 @@ public class DataDefinitionResourceImpl extends BaseDataDefinitionResourceImpl {
 				}
 			}
 
+			if ((rowsJSONArray.length() == 0) &&
+				MapUtil.isNotEmpty(nestedDDMFormFieldsMap)) {
+
+				sortedNestedDDMFormFields.addAll(
+					nestedDDMFormFieldsMap.values());
+			}
+
 			ddmFormField.setNestedDDMFormFields(sortedNestedDDMFormFields);
 		}
 	}

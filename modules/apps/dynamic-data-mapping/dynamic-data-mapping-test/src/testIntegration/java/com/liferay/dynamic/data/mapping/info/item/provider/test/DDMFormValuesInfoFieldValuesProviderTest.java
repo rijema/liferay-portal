@@ -106,6 +106,91 @@ public class DDMFormValuesInfoFieldValuesProviderTest {
 	}
 
 	@Test
+	public void testGetInfoFieldValues()
+		throws Exception {
+
+		DDMFormField ddmFormField = _createDDMFormField(
+			true,
+			HashMapBuilder.put(
+				RandomTestUtil.randomString(10), RandomTestUtil.randomString()
+			).put(
+				"",""
+			).build(),
+			DDMFormFieldTypeConstants.TEXT);
+
+		JournalArticle journalArticle = JournalTestUtil.addJournalArticle(
+			_dataDefinitionResourceFactory, ddmFormField,
+			_ddmFormValuesToFieldsConverter,
+			JSONUtil.putAll(
+				""
+			).toString(),
+			_group.getGroupId(), _journalConverter);
+
+		List<InfoFieldValue<InfoLocalizedValue<Object>>> infoFieldValues =
+			_ddmFormValuesInfoFieldValuesProvider.getInfoFieldValues(
+				journalArticle, journalArticle.getDDMFormValues());
+
+		Assert.assertEquals(1, infoFieldValues.size());
+	}
+
+	@Test
+	public void testGetInfoFieldValuesNested()
+		throws Exception {
+
+		DDMFormField ddmFormFieldStructure1 = new DDMFormField(
+			"fieldSet1", "fieldset");
+
+		_addNestedTextDDMFormFields(
+			ddmFormFieldStructure1, "ddmFormField1", "ddmFormField2");
+
+		JournalArticle journalArticle = JournalTestUtil.addJournalArticle(
+			_dataDefinitionResourceFactory, ddmFormFieldStructure1,
+			_ddmFormValuesToFieldsConverter,
+			JSONUtil.putAll(
+				""
+			).toString(),
+			_group.getGroupId(), _journalConverter);
+
+		List<InfoFieldValue<InfoLocalizedValue<Object>>> infoFieldValues =
+			_ddmFormValuesInfoFieldValuesProvider.getInfoFieldValues(
+				journalArticle, journalArticle.getDDMFormValues());
+
+		Assert.assertEquals(2, infoFieldValues.size());
+	}
+
+	@Test
+	public void testGetInfoFieldValuesNestedDouble()
+		throws Exception {
+
+		DDMFormField ddmFormFieldStructure1 = new DDMFormField(
+			"fieldSet1", "fieldset");
+		DDMFormField ddmFormFieldStructure2 = new DDMFormField(
+			"fieldSet2", "fieldset");
+
+		_addNestedTextDDMFormFields(
+			ddmFormFieldStructure1, "ddmFormField1", "ddmFormField2");
+		_addNestedTextDDMFormFields(
+			ddmFormFieldStructure2, "ddmFormField3", "ddmFormField4");
+
+		ddmFormFieldStructure1.addNestedDDMFormField(ddmFormFieldStructure2);
+
+		JournalArticle journalArticle = JournalTestUtil.addJournalArticle(
+			_dataDefinitionResourceFactory, ddmFormFieldStructure1,
+			_ddmFormValuesToFieldsConverter,
+			JSONUtil.putAll(
+				""
+			).toString(),
+			_group.getGroupId(), _journalConverter);
+
+		List<InfoFieldValue<InfoLocalizedValue<Object>>> infoFieldValues =
+			_ddmFormValuesInfoFieldValuesProvider.getInfoFieldValues(
+				journalArticle, journalArticle.getDDMFormValues());
+
+		Assert.assertEquals(6, infoFieldValues.size());
+	}
+
+
+	@Test
 	public void testGetInfoFieldValuesNestedTextDDMFormFieldType()
 		throws Exception {
 
@@ -257,8 +342,7 @@ public class DDMFormValuesInfoFieldValuesProviderTest {
 
 		for (String fieldName : fieldNames) {
 			nestedDDMFormFields.add(
-				_createTextDDMFormField(
-					fieldName, fieldName, false, false, false));
+				_createTextDDMFormField(fieldName));
 		}
 	}
 
@@ -341,19 +425,22 @@ public class DDMFormValuesInfoFieldValuesProviderTest {
 	}
 
 	private DDMFormField _createTextDDMFormField(
-		String name, String label, boolean localizable, boolean repeatable,
-		boolean required) {
+		String name) {
 
-		DDMFormField ddmFormField = new DDMFormField(name, "text");
+		DDMFormField ddmFormField = new DDMFormField(name, DDMFormFieldTypeConstants.TEXT);
 
-		ddmFormField.setDataType("string");
-		ddmFormField.setLocalizable(localizable);
-		ddmFormField.setRepeatable(repeatable);
-		ddmFormField.setRequired(required);
+		ddmFormField.setDataType("text");
+		ddmFormField.setIndexType("text");
+		ddmFormField.setLocalizable(true);
+		ddmFormField.setRepeatable(false);
+		ddmFormField.setRequired(false);
 
-		LocalizedValue localizedValue = ddmFormField.getLabel();
+		LocalizedValue localizedValue = new LocalizedValue(LocaleUtil.US);
 
-		localizedValue.addString(LocaleUtil.US, label);
+		localizedValue.addString(
+			LocaleUtil.US, RandomTestUtil.randomString(10));
+
+		ddmFormField.setLabel(localizedValue);
 
 		return ddmFormField;
 	}
