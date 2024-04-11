@@ -38,6 +38,18 @@ export async function getEmailNotificationRoles(baseResourceURL: string) {
 	return [accountRolesGroup];
 }
 
+export function getChecked(
+	rolesNamesList: EmailNotificationRecipients[],
+	baseRoleList: MultiSelectItem[]
+) {
+
+	return baseRoleList.map((baseRole) => {
+		return {
+			...baseRole, children: getCheckedChildren(rolesNamesList,baseRole.children)
+		}
+	})
+}
+
 export function getCheckedChildren(
 	rolesNamesList: EmailNotificationRecipients[],
 	children: MultiSelectItemChild[]

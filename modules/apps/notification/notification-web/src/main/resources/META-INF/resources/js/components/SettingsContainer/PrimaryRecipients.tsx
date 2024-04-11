@@ -21,7 +21,7 @@ import {
 import React, {useEffect, useState} from 'react';
 
 import {NotificationTemplateError} from '../EditNotificationTemplate';
-import {getCheckedChildren} from './rolesUtils';
+import {getChecked} from './rolesUtils';
 
 interface PrimaryRecipientProps {
 	emailNotificationRoles: MultiSelectItem[];
@@ -81,18 +81,10 @@ export function PrimaryRecipient({
 			(!!toRolesList.length || !!emailNotificationRoles.length)
 		) {
 			const baseRoleList = toRolesList.length
-				? toRolesList[0]
-				: emailNotificationRoles[0];
+				? toRolesList
+				: emailNotificationRoles;
 
-			setToRolesList([
-				{
-					...baseRoleList,
-					children: getCheckedChildren(
-						recipient.to,
-						baseRoleList.children
-					),
-				},
-			]);
+			setToRolesList(getChecked(recipient.to, baseRoleList));
 
 			return;
 		}

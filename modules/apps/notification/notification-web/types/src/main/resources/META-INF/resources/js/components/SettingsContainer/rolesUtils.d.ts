@@ -10,6 +10,18 @@ import {
 export declare function getEmailNotificationRoles(
 	baseResourceURL: string
 ): Promise<MultiSelectItem[]>;
+export declare function getChecked(
+	rolesNamesList: EmailNotificationRecipients[],
+	baseRoleList: MultiSelectItem[]
+): {
+	children: {
+		checked: boolean;
+		label: string;
+		value: string;
+	}[];
+	label: string;
+	value: string;
+}[];
 export declare function getCheckedChildren(
 	rolesNamesList: EmailNotificationRecipients[],
 	children: MultiSelectItemChild[]
