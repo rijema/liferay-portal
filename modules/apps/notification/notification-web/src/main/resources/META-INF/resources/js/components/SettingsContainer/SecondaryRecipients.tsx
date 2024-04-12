@@ -17,7 +17,7 @@ import {
 } from 'frontend-js-components-web';
 import React, {useEffect, useState} from 'react';
 
-import {getCheckedChildren} from './rolesUtils';
+import {getChecked} from './rolesUtils';
 
 interface SecondaryRecipientsProps {
 	emailNotificationRoles: MultiSelectItem[];
@@ -66,18 +66,10 @@ export function SecondaryRecipient({
 			(!!ccRolesList.length || !!emailNotificationRoles.length)
 		) {
 			const baseRoleList = ccRolesList.length
-				? ccRolesList[0]
-				: emailNotificationRoles[0];
+				? ccRolesList
+				: emailNotificationRoles;
 
-			setCCRolesList([
-				{
-					...baseRoleList,
-					children: getCheckedChildren(
-						recipient.cc,
-						baseRoleList.children
-					),
-				},
-			]);
+			setCCRolesList(getChecked(recipient.cc, baseRoleList));
 
 			return;
 		}
@@ -97,18 +89,10 @@ export function SecondaryRecipient({
 			(!!bccRolesList.length || !!emailNotificationRoles.length)
 		) {
 			const baseRoleList = bccRolesList.length
-				? bccRolesList[0]
-				: emailNotificationRoles[0];
+				? bccRolesList
+				: emailNotificationRoles;
 
-			setBCCRolesList([
-				{
-					...baseRoleList,
-					children: getCheckedChildren(
-						recipient.bcc,
-						baseRoleList.children
-					),
-				},
-			]);
+			setBCCRolesList(getChecked(recipient.bcc, baseRoleList));
 
 			return;
 		}
