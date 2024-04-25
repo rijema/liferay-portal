@@ -45,6 +45,13 @@ public class DDMDataProviderInvokerImpl implements DDMDataProviderInvoker {
 
 		_invoked = true;
 
+		_log.debug(
+			"###Instance ID when invoking: " +
+			ddmDataProviderRequest.getDDMDataProviderId() +
+			" | Parameters from provider " +
+			ddmDataProviderRequest.getParameters() +
+			" | Company ID " + ddmDataProviderRequest.getCompanyId());
+
 		try {
 			return doInvoke(ddmDataProviderRequest);
 		}
@@ -55,6 +62,9 @@ public class DDMDataProviderInvokerImpl implements DDMDataProviderInvoker {
 						ddmDataProviderRequest.getDDMDataProviderId(),
 					exception);
 			}
+
+			_log.debug(
+				"###Exception Type when invoking: " + exception.getCause());
 
 			return createDDMDataProviderErrorResponse(exception);
 		}
@@ -161,6 +171,11 @@ public class DDMDataProviderInvokerImpl implements DDMDataProviderInvoker {
 		catch (Exception exception) {
 			if (_log.isDebugEnabled()) {
 				_log.debug(exception);
+				_log.debug(
+					"###Exception message when deactivating: " +
+					exception.getMessage() +
+					" | Exception cause " +
+					exception.getCause());
 			}
 			else if (_log.isWarnEnabled()) {
 				_log.warn("Unable to deactivate", exception);

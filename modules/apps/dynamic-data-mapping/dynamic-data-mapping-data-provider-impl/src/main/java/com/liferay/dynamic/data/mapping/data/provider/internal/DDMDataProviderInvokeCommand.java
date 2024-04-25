@@ -46,7 +46,7 @@ public class DDMDataProviderInvokeCommand
 						HystrixCommandProperties.ExecutionIsolationStrategy.THREAD)
 					.withExecutionTimeoutInMilliseconds(
 						_getTimeout(ddmRESTDataProviderSettings))
-					.withFallbackEnabled(false)
+					.withFallbackEnabled(true)
 			).andThreadPoolPropertiesDefaults(
 				HystrixThreadPoolProperties.Setter()
 					.withAllowMaximumSizeToDivergeFromCoreSize(true)
