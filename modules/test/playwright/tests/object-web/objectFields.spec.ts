@@ -21,7 +21,7 @@ test.describe('Manage object fields through Model Builder', () => {
 	}) => {
 		await page.goto('/');
 
-		const ListTypeDefinition =
+		const listTypeDefinition =
 			await apiHelpers.listTypeAdmin.postRandomListTypeDefinition();
 
 		const objectDefinition =
@@ -36,7 +36,7 @@ test.describe('Manage object fields through Model Builder', () => {
 		const objectFieldLabel = 'objectFieldLabel' + getRandomInt();
 
 		await modelBuilderPage.createObjectField({
-			listTypeDefinitionName: ListTypeDefinition.name,
+			listTypeDefinitionName: listTypeDefinition.name,
 			mandatory: false,
 			objectDefinitionName: objectDefinition.name,
 			objectFieldBusinessType: 'Picklist',
@@ -56,7 +56,68 @@ test.describe('Manage object fields through Model Builder', () => {
 		);
 
 		await apiHelpers.listTypeAdmin.deleteListTypeDefinition(
-			ListTypeDefinition.id
+			listTypeDefinition.id
 		);
+	});
+
+	test('all picklist definitions are listed during object field creation', async ({
+		apiHelpers,
+		modelBuilderPage,
+		page,
+		viewObjectDefinitionsPage,
+	}) => {
+		const listTypeDefinitions = await Promise.all(
+			Array(22)
+				.fill(null)
+				.map(() =>
+					apiHelpers.listTypeAdmin.postRandomListTypeDefinition()
+				)
+		);
+
+		const objectDefinition =
+			await apiHelpers.objectAdmin.postRandomObjectDefinition('default');
+
+		try {
+			await page.goto('/');
+
+			await viewObjectDefinitionsPage.goto();
+
+			await viewObjectDefinitionsPage.openObjectFolder('default');
+
+			await viewObjectDefinitionsPage.viewInModelBuilder();
+
+			await modelBuilderPage.openObjectFieldSelectionPage(
+				objectDefinition.name,
+				'Picklist',
+				'objectFieldLabel' + getRandomInt()
+			);
+
+			modelBuilderPage.newObjectFieldSelectPicklist.click();
+
+			const listTypeDefinitionBox =
+				modelBuilderPage.page.getByRole('listbox');
+
+			await expect(listTypeDefinitionBox).toBeVisible();
+
+			await expect(
+				listTypeDefinitionBox.getByRole('listitem')
+			).toHaveCount(22);
+		}
+		finally {
+
+			// Clean up
+
+			await apiHelpers.objectAdmin.deleteObjectDefinition(
+				objectDefinition.id
+			);
+
+			await Promise.all(
+				listTypeDefinitions.map((listTypeDefinition) =>
+					apiHelpers.listTypeAdmin.deleteListTypeDefinition(
+						listTypeDefinition.id
+					)
+				)
+			);
+		}
 	});
 });

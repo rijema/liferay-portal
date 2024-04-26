@@ -129,23 +129,11 @@ export class ModelBuilderPage {
 		objectFieldBusinessType,
 		objectFieldLabel,
 	}: CreateObjectField) {
-		await this.leftSidebarItems
-			.filter({hasText: objectDefinitionName})
-			.click();
-
-		await this.objectDefinitionNodes
-			.filter({hasText: objectDefinitionName})
-			.getByRole('button', {name: 'Add Field or Relationship'})
-			.click();
-
-		await this.addObjectFieldButton.click();
-
-		await this.newObjectFieldLabel.fill(objectFieldLabel);
-
-		await this.newObjectFieldSelectBusinessType.click();
-		await this.page
-			.getByRole('option', {exact: true, name: objectFieldBusinessType})
-			.click();
+		await this.openObjectFieldSelectionPage(
+			objectDefinitionName,
+			objectFieldBusinessType,
+			objectFieldLabel
+		);
 
 		if (objectFieldBusinessType === 'Picklist') {
 			await this.newObjectFieldSelectPicklist.click();
@@ -216,6 +204,30 @@ export class ModelBuilderPage {
 		return this.page.locator(
 			`div[data-handleid="${objectDefinitionExternalReferenceCode}_${position}"]:not([data-handleid="${dataHandled}"])`
 		);
+	}
+
+	async openObjectFieldSelectionPage(
+		objectDefinitionName: string,
+		objectFieldBusinessType: string,
+		objectFieldLabel: string
+	) {
+		await this.leftSidebarItems
+			.filter({hasText: objectDefinitionName})
+			.click();
+
+		await this.objectDefinitionNodes
+			.filter({hasText: objectDefinitionName})
+			.getByRole('button', {name: 'Add Field or Relationship'})
+			.click();
+
+		await this.addObjectFieldButton.click();
+
+		await this.newObjectFieldLabel.fill(objectFieldLabel);
+
+		await this.newObjectFieldSelectBusinessType.click();
+		await this.page
+			.getByRole('option', {exact: true, name: objectFieldBusinessType})
+			.click();
 	}
 
 	getObjectFolderLabelHeaderLocator = (objectFolderLabel: string) => {
