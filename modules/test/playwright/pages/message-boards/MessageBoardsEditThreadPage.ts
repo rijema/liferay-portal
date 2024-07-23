@@ -29,7 +29,7 @@ export class MessageBoardsEditThreadPage {
 		this.submitForWorkflowButton = page.getByRole('button', {
 			exact: true,
 			name: 'Submit for Workflow',
-		})
+		});
 		this.subjectSelector = page.getByLabel('Subject');
 	}
 
@@ -48,18 +48,14 @@ export class MessageBoardsEditThreadPage {
 
 		await this.subjectSelector.fill(subject);
 		await this.bodyTextBox.fill(body);
-		
-		
-		await this.publishButton.click()
+
+		await this.publishButton.click();
 	}
 
-	async publishNewThreadForWorkflow(
-		subject: string,
-		body: string,
-	) {
-		await this.messageBoardsPage.newThreadButton.click()
+	async publishNewThreadForWorkflow(subject: string, body: string) {
+		await this.messageBoardsPage.newThreadButton.click();
 		await this.subjectSelector.fill(subject);
 		await this.bodyTextBox.fill(body);
-		await this.submitForWorkflowButton.click()
+		await this.submitForWorkflowButton.click();
 	}
 }

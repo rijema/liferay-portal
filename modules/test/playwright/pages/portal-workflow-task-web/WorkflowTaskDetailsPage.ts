@@ -41,15 +41,19 @@ export class WorkflowTaskDetailsPage {
 		this.reviewActionMenu = page.locator(
 			'[id="_com_liferay_portal_workflow_task_web_portlet_MyWorkflowTaskPortlet_kldx___menu"]'
 		);
-		this.viewButton = page.getByRole('link', {exact: true , name: 'View'});
+		this.viewButton = page.getByRole('link', {exact: true, name: 'View'});
 		this.commentBox = page.frameLocator('iframe').getByRole('textbox');
 		this.reviewComment = page.getByRole('textbox', {name: 'Comment'});
 		this.page = page;
 		this.workflowTasksPage = new WorkflowTasksPage(page);
-		this.detailsMessage = page.getByLabel('Ask a user to work on the item.');
-		this.comments = page.getByRole('button',{name: 'Comments'})
+		this.detailsMessage = page.getByLabel(
+			'Ask a user to work on the item.'
+		);
+		this.comments = page.getByRole('button', {name: 'Comments'});
 		this.subscribeButton = page.getByLabel('Subscribe to Comments');
-		this.commentSectionButton = page.getByRole('button', {name: 'Comments'});
+		this.commentSectionButton = page.getByRole('button', {
+			name: 'Comments',
+		});
 	}
 
 	async clickDoneButton() {
