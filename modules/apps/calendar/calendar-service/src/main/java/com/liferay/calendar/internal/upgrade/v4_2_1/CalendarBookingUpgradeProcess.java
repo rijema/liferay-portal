@@ -35,8 +35,8 @@ public class CalendarBookingUpgradeProcess extends UpgradeProcess {
 				connection.prepareStatement(
 					SQLTransformer.transform(
 						StringBundler.concat(
-							"select calendarBookingId, companyId, ",
-							"ctCollectionId, userId, startTime, endTime from ",
+							"select ctCollectionId, calendarBookingId, ",
+							"companyId, userId, startTime, endTime from ",
 							"CalendarBooking where allDay = [$TRUE$]")));
 			PreparedStatement updatePreparedStatement =
 				AutoBatchPreparedStatementUtil.autoBatch(
@@ -94,7 +94,6 @@ public class CalendarBookingUpgradeProcess extends UpgradeProcess {
 
 				updatePreparedStatement.setLong(
 					3, resultSet.getLong("ctCollectionId"));
-
 				updatePreparedStatement.setLong(
 					4, resultSet.getLong("calendarBookingId"));
 
