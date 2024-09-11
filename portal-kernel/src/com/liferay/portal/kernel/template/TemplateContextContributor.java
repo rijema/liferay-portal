@@ -22,4 +22,8 @@ public interface TemplateContextContributor {
 		Map<String, Object> contextObjects,
 		HttpServletRequest httpServletRequest);
 
+	public default void prepare(
+		Map<String, Object> contextObjects){
+	};
+
 }

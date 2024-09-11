@@ -540,6 +540,8 @@ public class EmailNotificationType extends BaseNotificationType {
 
 		themeDisplay.setLocale(siteDefaultLocale);
 
+		template.prepare(null);
+
 		InfoItemFieldValuesProvider<Object> infoItemFieldValuesProvider =
 			_infoItemServiceRegistry.getFirstInfoItemService(
 				InfoItemFieldValuesProvider.class,

@@ -55,6 +55,15 @@ public class FreeMarkerTemplateContextHelper extends TemplateContextHelper {
 		Map<String, Object> contextObjects,
 		HttpServletRequest httpServletRequest) {
 
+		if (httpServletRequest == null) {
+			for (TemplateContextContributor templateContextContributor :
+				getTemplateContextContributors()) {
+
+				templateContextContributor.prepare(contextObjects);
+			}
+			return;
+		}
+
 		super.prepare(contextObjects, httpServletRequest);
 
 		// Theme display
