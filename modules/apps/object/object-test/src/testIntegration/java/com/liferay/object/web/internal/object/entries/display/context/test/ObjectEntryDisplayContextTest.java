@@ -88,14 +88,14 @@ public class ObjectEntryDisplayContextTest {
 				TestPropsValues.getCompanyId(), "C_AA");
 
 		ObjectEntry objectEntryAA1 = _objectEntryLocalService.getObjectEntry(
-			"AA1", objectDefinitionAA.getObjectDefinitionId());
+			"AA1", objectDefinitionAA.getObjectDefinitionId(), 0);
 
 		MockHttpServletRequest mockHttpServletRequest =
 			_getMockHttpServletRequest(
 				objectEntryAA1.getExternalReferenceCode(), objectDefinitionAA);
 
 		ObjectEntry objectEntryA1 = _objectEntryLocalService.getObjectEntry(
-			"A1", nodeA.getPrimaryKey());
+			"A1", nodeA.getPrimaryKey(), 0);
 
 		ObjectDefinition objectDefinitionA =
 			_objectDefinitionLocalService.getObjectDefinition(
@@ -129,7 +129,7 @@ public class ObjectEntryDisplayContextTest {
 				TestPropsValues.getCompanyId(), "C_AAA");
 
 		ObjectEntry objectEntryAAA1 = _objectEntryLocalService.getObjectEntry(
-			"AAA1", objectDefinitionAAA.getObjectDefinitionId());
+			"AAA1", objectDefinitionAAA.getObjectDefinitionId(), 0);
 
 		mockHttpServletRequest = _getMockHttpServletRequest(
 			objectEntryAAA1.getExternalReferenceCode(), objectDefinitionAAA);

@@ -224,7 +224,8 @@ public class DefaultObjectEntryManagerImpl
 		com.liferay.object.model.ObjectEntry serviceBuilderObjectEntry =
 			_objectEntryService.getObjectEntry(
 				externalReferenceCode, companyId,
-				getGroupId(objectDefinition, scopeKey));
+				getGroupId(objectDefinition, scopeKey),
+				objectDefinition.getObjectDefinitionId());
 
 		_checkObjectEntryObjectDefinitionId(
 			objectDefinition, serviceBuilderObjectEntry);
@@ -566,7 +567,8 @@ public class DefaultObjectEntryManagerImpl
 		com.liferay.object.model.ObjectEntry serviceBuilderObjectEntry =
 			_objectEntryService.getObjectEntry(
 				externalReferenceCode, companyId,
-				getGroupId(objectDefinition, scopeKey));
+				getGroupId(objectDefinition, scopeKey),
+				objectDefinition.getObjectDefinitionId());
 
 		_checkObjectEntryObjectDefinitionId(
 			objectDefinition, serviceBuilderObjectEntry);

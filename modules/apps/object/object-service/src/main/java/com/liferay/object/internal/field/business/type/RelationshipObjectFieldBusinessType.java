@@ -139,7 +139,7 @@ public class RelationshipObjectFieldBusinessType
 				ObjectEntry objectEntry =
 					_objectEntryLocalService.getObjectEntry(
 						externalReferenceCode,
-						objectDefinition.getObjectDefinitionId());
+						objectDefinition.getObjectDefinitionId(), 0);
 
 				if (!Objects.equals(
 						objectDefinition.getObjectDefinitionId(),
@@ -220,8 +220,8 @@ public class RelationshipObjectFieldBusinessType
 			}
 
 			ObjectEntry objectEntry = _objectEntryLocalService.getObjectEntry(
-				externalReferenceCode,
-				objectDefinition.getObjectDefinitionId());
+				externalReferenceCode, objectDefinition.getObjectDefinitionId(),
+				0);
 
 			return objectEntry.getObjectEntryId();
 		}

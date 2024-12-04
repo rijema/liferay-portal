@@ -1244,7 +1244,7 @@ public class ObjectEntryLocalServiceTest {
 			});
 
 		ObjectEntry objectEntry = _objectEntryLocalService.getObjectEntry(
-			"objectEntryERC", _objectDefinition.getObjectDefinitionId());
+			"objectEntryERC", _objectDefinition.getObjectDefinitionId(), 0);
 
 		ObjectFieldTestUtil.withEncryptedObjectFieldProperties(
 			"", true, "",
@@ -2022,7 +2022,7 @@ public class ObjectEntryLocalServiceTest {
 				() -> {
 					ObjectEntry objectEntry =
 						_objectEntryLocalService.getObjectEntry(
-							"A2", objectDefinitionA.getObjectDefinitionId());
+							"A2", objectDefinitionA.getObjectDefinitionId(), 0);
 
 					return objectEntry.getObjectEntryId();
 				}

@@ -318,7 +318,7 @@ public abstract class BaseObjectEntryManager {
 			ObjectEntry serviceBuilderObjectEntry =
 				objectEntryLocalService.fetchObjectEntry(
 					externalReferenceCode,
-					objectDefinition.getObjectDefinitionId());
+					objectDefinition.getObjectDefinitionId(), 0);
 
 			if (serviceBuilderObjectEntry == null) {
 				return;

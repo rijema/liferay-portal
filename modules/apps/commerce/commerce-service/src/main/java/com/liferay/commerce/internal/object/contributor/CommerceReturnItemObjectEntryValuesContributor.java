@@ -114,7 +114,7 @@ public class CommerceReturnItemObjectEntryValuesContributor
 					values.get(
 						"r_commerceReturnToCommerceReturnItems_l_" +
 							"commerceReturnERC")),
-				objectDefinition.getObjectDefinitionId());
+				objectDefinition.getObjectDefinitionId(), 0);
 
 			if (originalObjectEntry == null) {
 				return;
@@ -196,7 +196,7 @@ public class CommerceReturnItemObjectEntryValuesContributor
 					_objectEntryLocalService.getObjectEntry(
 						GetterUtil.getString(
 							values.get("externalReferenceCode")),
-						objectDefinitionId);
+						objectDefinitionId, 0);
 
 				Map<String, Serializable> originalValues =
 					originalObjectEntry.getValues();

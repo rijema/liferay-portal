@@ -103,7 +103,7 @@ public class CommerceReturnObjectEntryValuesContributor
 		if (originalObjectEntry == null) {
 			originalObjectEntry = _objectEntryLocalService.fetchObjectEntry(
 				GetterUtil.getString(values.get("externalReferenceCode")),
-				objectDefinition.getObjectDefinitionId());
+				objectDefinition.getObjectDefinitionId(), 0);
 		}
 
 		Map<String, Serializable> originalValues =

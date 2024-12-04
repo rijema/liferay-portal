@@ -93,7 +93,7 @@ public class ObjectActionDownloadTriggerMessageListener
 
 		ObjectEntry objectEntry = _objectEntryLocalService.fetchObjectEntry(
 			objectEntryExternalReferenceCode,
-			objectDefinition.getObjectDefinitionId());
+			objectDefinition.getObjectDefinitionId(), 0);
 
 		if (objectEntry == null) {
 			if (_log.isDebugEnabled()) {

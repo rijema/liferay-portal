@@ -342,7 +342,7 @@ public class BatchEngineBrokerTest {
 		}
 
 		ObjectEntry objectEntry = _objectEntryLocalService.getObjectEntry(
-			_OBJECT_ENTRY_ERC_1, _objectDefinition1.getObjectDefinitionId());
+			_OBJECT_ENTRY_ERC_1, _objectDefinition1.getObjectDefinitionId(), 0);
 
 		Assert.assertNotNull(objectEntry);
 
@@ -380,8 +380,8 @@ public class BatchEngineBrokerTest {
 				_getURIString("json", fileInputStream));
 
 			ObjectEntry objectEntry = _objectEntryLocalService.getObjectEntry(
-				_OBJECT_ENTRY_ERC_1,
-				_objectDefinition1.getObjectDefinitionId());
+				_OBJECT_ENTRY_ERC_1, _objectDefinition1.getObjectDefinitionId(),
+				0);
 
 			_addObjectEntryInDifferentCompany("TestObject");
 
@@ -1477,7 +1477,7 @@ public class BatchEngineBrokerTest {
 		}
 
 		ObjectEntry objectEntry = _objectEntryLocalService.getObjectEntry(
-			objectEntryERC, _objectDefinition1.getObjectDefinitionId());
+			objectEntryERC, _objectDefinition1.getObjectDefinitionId(), 0);
 
 		Assert.assertEquals(objectEntry.getGroupId(), groupId);
 
@@ -1512,7 +1512,7 @@ public class BatchEngineBrokerTest {
 				_getURIString("json", fileInputStream));
 
 			ObjectEntry objectEntry = _objectEntryLocalService.getObjectEntry(
-				objectEntryERC, _objectDefinition1.getObjectDefinitionId());
+				objectEntryERC, _objectDefinition1.getObjectDefinitionId(), 0);
 
 			Assert.assertEquals(objectEntry.getGroupId(), groupId);
 
